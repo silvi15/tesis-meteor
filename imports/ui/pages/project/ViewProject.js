@@ -25,32 +25,7 @@ const handleRemove = (history,_id) => {
 const ViewProject = ({ pro, history }) => {
     return pro ? (
         <div className="ViewProject">
-            <div className="page-header clearfix">
-                <h4 className="pull-left">{ /* pro && pro.name */}</h4>
-                <ButtonToolbar className="pull-right">
-                    <ButtonGroup bsSize="big">
-                    {/*                    
-                    <Button className="postulate"
-                        onClick={() => handlePostulate(history, pro._id)}
-                        >
-                        <i className="fa fa-pencil-square-o" aria-hidden="true">Postulate</i>
-                        </Button>
-                        
-                        <Button
-                        onClick={() => handleEdit(history, pro._id)}
-                        >
-                        <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
-                        </Button>
-                        
-                        <Button
-                        onClick={() => handleRemove(history, pro._id)}
-                        className="text-danger">
-                        <i className="fa fa-trash" aria-hidden="true"></i>
-                        </Button>
-                        */}
-                    </ButtonGroup>
-                </ButtonToolbar>
-        
+            <div className="page-header clearfix">                 
             <div className="selectProject">
                 <div className="rq">
                     <ul className="dc ayn">

@@ -1,8 +1,17 @@
 .skills button {
     margin: 0 3px
 };
+.listproject {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    margin: 0.5em;
+}
 .listproject .lupa {
     float: right;
+    margin: 1px;
+    padding: 0.5em;
     color: blue; 
 };
 .listproject .money {
@@ -12,6 +21,12 @@
 .listproject .name {
     color: black;
 };
+.listproject .corazon {
+    float: right;
+    margin: 1px;
+    padding: 0.5em;
+    color: red;
+}
 .postulate button {
     color: blue;
 };

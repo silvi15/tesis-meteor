@@ -4,11 +4,11 @@ import { Button, Alert } from 'react-bootstrap';
 export default class SkillsList extends Component{
     constructor(props){
     super(props); 
-    console.log('hola desde skills list');
+    console.log('hola',props);
     }
     render(){
         let { selectSkill } = this.props;
-        let {skills} = this.props.onSendProf;
+        let {skills} = this.props.SendProf;
              return (
                 skills.length > 0 ? 
                 <div>
@@ -17,9 +17,7 @@ export default class SkillsList extends Component{
                                 style={{margin: "5px"}}
                                 name={skills}
                                 ref={skills}
-                                onClick={() => {selectSkill(name);
-                                                this.props.onOpenSkill
-                                                }}
+                                onClick={() => {selectSkill(name)}}
                         >
                                 { name }
                         </Button>

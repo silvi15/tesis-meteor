@@ -27,16 +27,7 @@ export default class ProfessionsList extends Component{
             term: nameprof
         });
     }
-    /*
-        passProf(idprof){
-        console.log('idprof',idprof._str);// aca me pasa el id de la prof
-        this.setState({
-            PassProfToParent : idprof._str
-        });
-    }
-    */
     render(){ 
-      //  console.log('idprof',this.state.passProfToParent);
         const { term, professions} = this.state;   
              return (
                 <div>
