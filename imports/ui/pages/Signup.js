@@ -3,15 +3,20 @@ import { Link } from 'react-router-dom';
 import { Row, Col, FormGroup, ControlLabel, FormControl, Button, Textarea } from 'react-bootstrap';
 import handleSignup from '../../modules/signup';
 import SkillsList from '../containers/skill/SkillsList';
+import ProfessionsList from '../containers/profession/ProfessionsList';
 const skills = [];
+
 export default class Signup extends React.Component {
   constructor(props) {
-
     super(props);
-    this.state={selectedSkill: []}
+    this.state={
+      selectedSkill: [],
+      roles: 'worker' 
+    }
 }  
+  
   componentDidMount() {
-    handleSignup({ component: this, skills: this.selectedSkill });
+    handleSignup({ component: this, skills: this.selectedSkill, roles: this.state.roles });
   }
 
   handleSubmit(event) {
@@ -32,7 +37,7 @@ export default class Signup extends React.Component {
       <div className="Signup">
         <Row>
           <Col xs={ 12 } sm={ 6 } md={ 4 }>
-            <h4 className="page-header">Sign Up</h4>
+            <h4 className="text-center">Sign Up - <label> Worker </label> - </h4>
             <form
               ref={ form => (this.signupForm = form) }
               onSubmit={ this.handleSubmit }
@@ -41,7 +46,7 @@ export default class Signup extends React.Component {
                 <Col xs={ 12 } sm={ 12 }>
                   <FormGroup>
                     <ControlLabel>
-                     <i className="fa fa-user-circle-o" aria-hidden="true"> </i>
+                     <i><span className="fa fa-user-circle-o" aria-hidden="true"></span> </i>
                        First Name
                     </ControlLabel>
                     <FormControl
@@ -55,7 +60,7 @@ export default class Signup extends React.Component {
                 <Col xs={ 12 } sm={ 12 }>
                   <FormGroup>
                     <ControlLabel>
-                    <i className="fa fa-user-o" aria-hidden="true"> </i>
+                    <i><span className="fa fa-user-o" aria-hidden="true"></span> </i>
                     Last Name</ControlLabel>
                     <FormControl
                       type="text"
@@ -64,24 +69,20 @@ export default class Signup extends React.Component {
                       placeholder="Last Name"
                     />
                   </FormGroup>
-                
-                
                   <FormGroup>
                     <ControlLabel>
-                    <i className="fa fa-briefcase" aria-hidden="true"> </i>
-                    Profession
-                    </ControlLabel>
+                    <i><span className="fa fa-calendar" aria-hidden="true"></span> </i>
+                    Date of birthday</ControlLabel>
                     <FormControl
-                      type="text"
-                      ref="profession"
-                      name="profession"
-                      placeholder="please put proffesion"
+                      type="date"
+                      ref="birthday"
+                      name="birthday"
+                      placeholder="date of birthday"
                     />
                   </FormGroup>
-
                   <FormGroup>
                     <ControlLabel>
-                    <i className="fa fa-list" aria-hidden="true">  </i>
+                    <i><span className="fa fa-list" aria-hidden="true"> </span> </i>
                       Profile 
                     </ControlLabel>
                     <FormControl
@@ -91,11 +92,17 @@ export default class Signup extends React.Component {
                       name="profiled"
                       placeholder="describe your profile"
                     />
-                  </FormGroup>
-                  
+                  </FormGroup>   
+                  <FormGroup>
+                    <ControlLabel>
+                    <i><span className="fa fa-briefcase" aria-hidden="true"></span> </i>
+                    Profession
+                    </ControlLabel>
+                    <ProfessionsList />
+                  </FormGroup>                  
                   <FormGroup>
                   <ControlLabel>
-                  <i className="fa fa-wrench" aria-hidden="true"> </i>
+                  <i><span className="fa fa-wrench" aria-hidden="true"></span> </i>
                   Skills</ControlLabel>
                   <SkillsList selectSkill={this.selectSkill.bind(this)}/> 
                   </FormGroup>
@@ -104,7 +111,7 @@ export default class Signup extends React.Component {
               </Row>
               <FormGroup>
                 <ControlLabel>
-                <i className="fa fa-envelope" aria-hidden="true"> </i>
+                <i><span className="fa fa-envelope" aria-hidden="true"></span> </i>
                 Email Address</ControlLabel>
                 <FormControl
                   type="text"
@@ -115,7 +122,7 @@ export default class Signup extends React.Component {
               </FormGroup>
               <FormGroup>
                 <ControlLabel>
-                <i className="fa fa-key" aria-hidden="true"> </i>
+                <i><span className="fa fa-key" aria-hidden="true"> </span> </i>
                 Password</ControlLabel>
                 <FormControl
                   type="password"

@@ -11,7 +11,7 @@ export default class FindPeople extends React.Component{
 }
 render(){
     return (
-        <div className="container"> 
+        <div className="search"> 
         <div className="text-center">
             <img src="/img/avatar-men.jpg" className="img-circle" alt="Cinque Terre" width="304" height="236"/>
             <div>

@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
+import { Roles } from 'meteor/alanning:roles';
 
 export default class Home extends React.Component{
     constructor(props){
@@ -10,9 +11,12 @@ export default class Home extends React.Component{
     }
 }
 render(){
+    const showWorker = Roles.userIsInRole(Meteor.userId(),['worker']);
+    const showEnterprise = Roles.userIsInRole(Meteor.userId(),['enterprise']);
+    /* las variables que no muestre las tengo q aclarar aca, para que no explote*/
     return (
-        <div className="Inbox">
-        
+        <div className="home">
+        {showWorker &&  <div> soy worker </div> || <div></div> }
         <div className="workin">
             <h4>Work in</h4>
             <div className="rp bra brb agk">
@@ -27,6 +31,7 @@ render(){
                 </div>
             </div>            
         </div>
+        
         <div className="people-work-in-my-project">
             <h4>People Work in My Project</h4>
             <div className="rp bra brb agk">

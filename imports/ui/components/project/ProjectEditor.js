@@ -10,8 +10,9 @@ export default class ProjectEditor extends React.Component{
         this.state={
           selectedSkill: [],
           createdAt: new Date(),
+          user: this.props.user._id,
         }
-        console.log('hola',this.props);
+        console.log(this.state.user);
     }
     
     componentDidMount(){
@@ -26,7 +27,7 @@ export default class ProjectEditor extends React.Component{
           console.log(this.state.selectedSkill);
        };
     render() {
-        const { pro } = this.props;
+        const {pro} = this.props;
         return (<form
           ref={ form => (this.projectEditorForm = form) }
           onSubmit={ event => event.preventDefault() }

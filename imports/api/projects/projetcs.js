@@ -40,10 +40,10 @@ Projects.schema = new SimpleSchema({
         type: Date,
         label: 'createdAt',
         },
-    //userowner: {
-      //  type: [String],
-        //label: 'userowner',
-    //} 
+    userowner: {
+        type: String,
+        label: 'userowner',
+    } 
     /*userworker: {
         type: [String],
         label: 'User who works in project'

@@ -4,6 +4,7 @@ import { Nav } from 'react-bootstrap';
 
 const Menu = () => (
     <Nav>
+        <div className="menu"> 
         <div className="btn-group btn-group-justified" role="group" aria-label="Basic example">
             <NavLink to="/projects" type="button" className="btn btn-secondary">
                 <span className="glyphicon glyphicon-briefcase"></span>
@@ -28,6 +29,7 @@ const Menu = () => (
             <NavLink to="/profile" type="button" className="btn btn-secondary" >
             <span className="glyphicon glyphicon-user"></span>
             </NavLink>
+        </div>
         </div>
         </Nav>
 

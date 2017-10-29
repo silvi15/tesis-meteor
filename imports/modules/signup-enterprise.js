@@ -10,55 +10,34 @@ let component;
 const getUserData = () => ({
   email: document.querySelector('[name="emailAddress"]').value,
   password: document.querySelector('[name="password"]').value,
-  profession: document.querySelector('[name="profession"]').value,
-  profiled: document.querySelector('[name="profiled"]').value,
-  skills: component.state.selectedSkill,
-  birthday: document.querySelector('[name="birthday"]').value,
   profile: {
     name: {
       first: document.querySelector('[name="firstName"]').value,
       last: document.querySelector('[name="lastName"]').value,
-      birthday: document.querySelector('[name="birthday"]').value,
-      profession: document.querySelector('[name="profession"]').value,
-      profiled: document.querySelector('[name="profiled"]').value,     
-      skills: component.state.selectedSkill,
     },
   },
   roles: component.state.roles,
 });
-
-const signup = () => {
+const signupEnterprise = () => {
   const user = getUserData();
   Accounts.createUser(user, (error) => {
     if (error) {
       Bert.alert(error.reason, 'danger');
     } else {
-      //Roles.addUsersToRoles(user,[worker],'profile.profession');
-      Roles.addUsersToRoles(user,[user.roles],user.profile.profession);
+      // browserHistory.push('/');
+      Roles.addUsersToRoles(user, roles);
       Bert.alert('Welcome!', 'success');
     }
   });
 };
 
 const validate = () => {
-  $(component.signupForm).validate({
+  $(component.signupFormEnterprise).validate({
     rules: {
       firstName: {
         required: true,
       },
       lastName: {
-        required: true,
-      },
-      birthday: {
-        required: true,
-      },
-      profession: {
-        required: true,
-      },
-      profiled: {
-        required: true,
-      },
-      skills: {
         required: true,
       },
       emailAddress: {
@@ -72,22 +51,10 @@ const validate = () => {
     },
     messages: {
       firstName: {
-        required: 'First name?',
+        required: 'FirstName',
       },
       lastName: {
-        required: 'Last name?',
-      },
-      birthday : {
-        required: ' Birthday ?'
-      },
-      profession: {
-        required: 'Profession?',
-      },
-      profiled: {
-        required: 'Profile?',
-      },
-      skills: {
-        required: 'Please select one skills',
+        required: 'LastName',
       },
       emailAddress: {
         required: 'Need an email address here.',
@@ -98,11 +65,11 @@ const validate = () => {
         minlength: 'Use at least six characters, please.',
       },
     },
-    submitHandler() { signup(); },
+    submitHandler() { signupEnterprise(); },
   });
 };
 
-export default function handleSignup(options) {
+export default function handleSignupEnterprise(options) {
   component = options.component;
   console.log('component ', component);
   validate();

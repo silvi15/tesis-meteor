@@ -29,12 +29,13 @@ const ViewProject = ({ pro, history }) => {
                 <h4 className="pull-left">{ /* pro && pro.name */}</h4>
                 <ButtonToolbar className="pull-right">
                     <ButtonGroup bsSize="big">
-                    <Button
+                    {/*                    
+                    <Button className="postulate"
                         onClick={() => handlePostulate(history, pro._id)}
                         >
                         <i className="fa fa-pencil-square-o" aria-hidden="true">Postulate</i>
                         </Button>
-                        {/*
+                        
                         <Button
                         onClick={() => handleEdit(history, pro._id)}
                         >
@@ -50,7 +51,7 @@ const ViewProject = ({ pro, history }) => {
                     </ButtonGroup>
                 </ButtonToolbar>
         
-            <div className="rp bra brb agk">
+            <div className="selectProject">
                 <div className="rq">
                     <ul className="dc ayn">
                         <li> <span className="fa fa-id-card-o"> </span> <a href="#"> Name: </a> <label> {pro && pro.name}  </label> </li>
@@ -58,10 +59,15 @@ const ViewProject = ({ pro, history }) => {
                         <li> <span className="fa fa-calendar"> </span> <a href="#"> Days: </a> <label> {pro && pro.days} </label> </li>
                         <li> <span className="fa fa-wrench"> </span> <a href="#"> Skills: </a> {pro && pro.skills }   </li>
                         <li> <span className="fa fa-money"></span>  <a href="#"> Money: </a> <label> u$s {pro && pro.money} </label> </li>
-                        <li> <span className="fa fa-user-o"></span> <a href="#"> UserWorker:</a> <label> </label> </li>
+                        <li> <span className="fa fa-user-o"></span> <a href="#"> UserOwner:</a> <label> {pro && pro.userowner} </label> </li>
                         <li> <span className="fa fa-users"></span> <a href="#"> UserWorker:</a> <label> </label> </li>
                         <li> <span className="fa fa-circle-o-notch"></span> <a href="#"> State: </a> <label> Working </label> </li>
                     </ul>
+                    <Button className="postulate"
+                        onClick={() => handlePostulate(history, pro._id)}
+                        >
+                        <i className="fa fa-pencil-square-o" aria-hidden="true">Postulate</i>
+                    </Button>
                 </div>
             </div>            
         </div>

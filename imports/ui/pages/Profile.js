@@ -1,35 +1,43 @@
 import React, { Component,PropTypes } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
+import { Roles } from 'meteor/alanning:roles';
 
 export default class Profile extends React.Component{
     constructor(props){ 
         super(props);
         this.state = {
-            user: Meteor.users.findOne(Meteor.userId())
+            user: Meteor.users.findOne(Meteor.userId()),
             }
     }
     render(){
         const {user} = this.state;
-        String.prototype.capitalize = function() {
-            return this.charAt(0).toUpperCase() + this.slice(1);
-        }
+        const showWorkers = Roles.userIsInRole(Meteor.userId(),['worker']);
+        const showEnterprise = Roles.userIsInRole(Meteor.userId(),['enterprise']);
+        const showAdmin = Roles.userIsInRole(Meteor.userId(),['admin']);
+        const skills = user && user.profile && user.profile.name && user.profile.name.skills || [];
         return (
-            <div className="container">
+            <div className="profile">
                     <div className="text-center">
-                        <img src="/img/silvi.jpeg" className="img-circle" alt="Cinque Terre" width="80" height="80" /> 
-                        <div className="name">   <label> <h2> {(user.profile.name.first).capitalize()}, {(user.profile.name.last).capitalize()} </h2> </label> </div>
-                        <div className="profession"> <label><h3> {(user.profile.name.profession).capitalize()} </h3></label></div> 
-                        <div className="description"> <label><h4> {user.profile.name.profiled} </h4></label> </div> 
+                        { showAdmin && <div>soy admin </div> || <div> </div>}
+                        <div className="fondo">
+                        <img src="/img/silvi.jpeg" className="avatar" /> 
+                        
+                        <div className="name">   <label> <h2> {user.profile.name.first}, {user.profile.name.last} </h2> </label> </div>
+                        <div className="profession"> <label><h3> {user.profile.name.profession} </h3></label></div> 
+                        
+                        <div className="description"> <label><h4> {user.profile.name.profiled} </h4></label> </div>                                
+                        </div>
                         <div className="skills" >
                         <h3><p><label>Skills</label></p></h3>
-                        {user.profile.name.skills.map( (skill,index) => {
+                        { skills.map( (skill,index) => {
                             return ( <button key={index} type="button" className="btn btn-primary"> 
                                             {skill}
                                         <p><span className="glyphicon glyphicon-star-empty"></span></p>
                                     </button> 
                                     )})}  
-                        </div> 
+                        </div>
+                      
                         <div className="comments">
                          <h3><p><label>Comments</label></p></h3>
                             <img src="/img/avatar-men.jpg" className="img-circle" alt="Cinque Terre" width="30" height="30" />
@@ -45,6 +53,7 @@ export default class Profile extends React.Component{
                                         </div>
                                     </div>
                         </div>
+                    
                     </div>       
                 </div>
         );

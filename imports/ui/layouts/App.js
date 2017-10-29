@@ -19,22 +19,24 @@ import ViewDocument from '../containers/document/ViewDocument';
 
 /* proyect */
 import Projects from '../pages/project/Projects';
-import NewProject from '../pages/project/NewProject';
+import NewProject from '../containers/project/NewProject';
 import EditProject from '../containers/project/EditProject';
 import ViewProject from '../containers/project/ViewProject';
 
+/* professions */
+import Professions from '../pages/profession/Professions';
 /* skill */
 import Skills from '../pages/skill/Skills';
-//import NewSkill from '../pages/NewSkill';
-//import EditSkill from '../containers/EditSkill';
-//import ViewSkill from '../containers/ViewSkill';
 
 //Login
 import Login from '../pages/Login';
 import RecoverPassword from '../pages/RecoverPassword';
 import ResetPassword from '../pages/ResetPassword';
 import Signup from '../pages/Signup';
+import SignupEnterprise from '../pages/SignupEnterprise';
 import NotFound from '../pages/NotFound';
+import Rol from '../pages/Rol';
+
 //Pages
 import Home from '../pages/Home';
 import Inbox from '../pages/Inbox';
@@ -60,6 +62,7 @@ const App = appProps => (
           <Authenticated exact path="/documents/:_id" component={ViewDocument} {...appProps} />
           <Authenticated exact path="/documents/:_id/edit" component={EditDocument} {...appProps} />
 
+          <Authenticated exact path="/professions" component={Professions} {...appProps} />  
           <Authenticated exact path="/skills" component={Skills} {...appProps} />
 {/*          <Authenticated exact path="/skills/new" component={NewSkill} {...appProps} />
           <Authenticated exact path="/skills/:_id" component={ViewSkill} {...appProps} />
@@ -72,6 +75,8 @@ const App = appProps => (
           <Authenticated exact path="/profile" component = { Profile } {...appProps} />
           
           <Public path="/signup" component={Signup} {...appProps} />
+          <Public path="/signupenterprise" component={SignupEnterprise} {...appProps} />
+          <Public path="/rol" component={Rol} {...appProps} />
           <Public path="/login" component={Login} {...appProps} />
           <Route name="recover-password" path="/recover-password" component={RecoverPassword} />
           <Route name="reset-password" path="/reset-password/:token" component={ResetPassword} />

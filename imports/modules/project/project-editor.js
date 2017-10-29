@@ -12,7 +12,7 @@ const handleUpsert = () => {
         days: document.querySelector('[name="days"]').value.trim(),
         skills: component.state.selectedSkill,
         money: document.querySelector('[name="money"]').value.trim(),
-        //userowner:
+        userowner: component.state.user,
         createdAt: component.state.createdAt,        
     };
     if(pro && pro._id) upsert._id = pro._id;
@@ -43,6 +43,9 @@ const validate = () => {
                 required: true,
             },
             money:{
+                required: true,
+            },
+            user:{
                 required: true,
             },
         },

@@ -5,8 +5,12 @@ import { Nav } from 'react-bootstrap';
 const PublicNavigation = () => (
   <div>
   <Nav>
-      <NavLink to="/signup" activeClassName="active">Signup</NavLink>
+  <li>
+      <NavLink to="/rol" activeClassName="active">Signup</NavLink>
+  </li>
+  <li>
       <NavLink to="/login" activeClassName="active">Login</NavLink> 
+  </li>
   </Nav>
   </div>
 );

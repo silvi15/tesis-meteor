@@ -1,3 +1,108 @@
 .skills button {
     margin: 0 3px
+};
+.listproject .lupa {
+    float: right;
+    color: blue; 
+};
+.listproject .money {
+    align-self: auto;
+    color: green;
+};
+.listproject .name {
+    color: black;
+};
+.postulate button {
+    color: blue;
+};
+.profile{
+display: flex;
+margin: 1em;
+align-items: center;
+};
+.profile .avatar{
+border-radius: 50%;
+width: 80px;
+height: 80px;
+};
+.profile .name{
+    color: #666;
+    align-items: center;
+};
+.profile .fondo{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+    padding: 1em;
+    margin: 1em;
+};
+.profile .skills{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+    padding: 1em;
+    margin: 1em;
+};
+.profile .comments{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+    padding: 1em;
+    padding: 1em;
+};
+.profile button{
+    background-color: #2d84cc;
+    color: #fff;
+    border: 1px solid #1f6fb1;
+    border-radius: 5px;
+    margin: 1em;
+    padding: 0.5em;
+};
+.selectProject{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+    margin: 2em;
+    padding: 2em;
+};
+.selectProject .postulate{
+    background-color: #2d84cc;
+    color: #fff;
+    margin: 1em;
+}
+.home .workin{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+    margin: 2em;
+    padding: 2em;
+};
+.home .people-work-in-my-project{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+    margin: 2em;
+    padding: 2em;
+};
+.menu .btn-group btn-group-justified{
+    background-color: #fff;
+    border: 1px solid #1C7EB0;
+    border-radius: 0.5em;
+    margin: 1em;
+    padding: 1em;
+};
+.search {
+    background-color: #fff;
+    border: 1px solid #DBDEE0;
+    border-radius: 0.5em;
+    margin: 1em;
+    padding: 1em;
+};
+.search button{
+    background-color: #2d84cc;  
+    color: #fff;
+    border: 1px solid #1f6fb1;
+    border-radius: 5px;
+    margin: 1em;
+    padding: 0.5em;
 }

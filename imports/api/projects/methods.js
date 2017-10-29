@@ -13,7 +13,7 @@ export const upsertProject = new ValidatedMethod({
         days:{ type: String, optional: true},
         money:{ type: String, optional: true },
         createdAt:{type: Date},
-        //userowner:{ type: [String]}, // aca iria el usuario q lo creo
+        userowner:{ type: String}, // aca iria el usuario q lo creo
         // startDate:{type: Date},
        // state:{type: String},
     }).validator(),
