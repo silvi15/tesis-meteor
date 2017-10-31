@@ -16,7 +16,7 @@ export default class Signup extends React.Component {
 }  
   
   componentDidMount() {
-    handleSignup({ component: this, skills: this.selectedSkill, roles: this.state.roles });
+    handleSignup({ component: this });
   }
 
   handleSubmit(event) {

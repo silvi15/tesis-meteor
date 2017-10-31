@@ -28,7 +28,8 @@ export default class ProfessionsList extends Component{
         });
     }
     render(){ 
-        const { term, professions} = this.state;   
+        const { term, professions} = this.state; 
+        const { onOpenSkill } = this.props; 
              return (
                 <div>
                     <input
@@ -45,7 +46,7 @@ export default class ProfessionsList extends Component{
                         key={prof._id}
                         onClick={()=>{this.selectProf(prof.name);
                                       this.props.selectedProf(prof._id);
-                                      this.props.onOpenSkill;
+                                      onOpenSkill();
                                       }}
                     >
                         <h1>{ prof.name }</h1>

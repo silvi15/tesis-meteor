@@ -1,6 +1,6 @@
 import { composeWithTracker } from 'react-komposer';
 import { Meteor } from 'meteor/meteor';
-import Professions from '../../../api/professions/professions'
+import Professions from '../../../api/professions/professions' 
 import ProfessionsList from '../../components/profession/ProfessionsList';
 import Loading from '../../components/Loading.js';
 

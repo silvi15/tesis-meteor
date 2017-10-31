@@ -8,11 +8,13 @@ const Projects = ({ history }) => (
         <Row>
           <Col xs={ 12 }>
             <div className="page-header clearfix">
-             <div className="container"> <h2 className="pull-left"> {/* Project*/}</h2> </div>
+             <div className="container"> <h3 className="pull-left"><label> Project</label> </h3> </div>
+              {/*
               <Link to="/projects/new">
                 <Button className="btn btn-primary">
                 New Project</Button>
               </Link>
+              */}
             </div>
             <ProjectsList history={history} />
           </Col>

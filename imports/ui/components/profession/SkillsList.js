@@ -4,11 +4,11 @@ import { Button, Alert } from 'react-bootstrap';
 export default class SkillsList extends Component{
     constructor(props){
     super(props); 
-    console.log('hola',props);
+    console.log('hola',props.prof);
     }
     render(){
         let { selectSkill } = this.props;
-        let {skills} = this.props.SendProf;
+        let {skills} = this.props.prof;
              return (
                 skills.length > 0 ? 
                 <div>

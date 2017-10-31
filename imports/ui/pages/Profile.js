@@ -2,6 +2,7 @@ import React, { Component,PropTypes } from 'react';
 import { Link, } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
+import { Row, Col, Button } from 'react-bootstrap';
 
 export default class Profile extends React.Component{
     constructor(props){ 
@@ -17,7 +18,13 @@ export default class Profile extends React.Component{
         const showAdmin = Roles.userIsInRole(Meteor.userId(),['admin']);
         const skills = user && user.profile && user.profile.name && user.profile.name.skills || [];
         return (
-            <div className="profile">
+            <div className="container">  
+            <Row>
+              <Col xs={ 12 }>
+                <div className="page-header clearfix">
+                 <div className="container"> <h3 className="pull-left"> <label>Profile</label> </h3> </div>
+                </div>
+                <div className="profile">
                     <div className="text-center">
                         { showAdmin && <div>soy admin </div> || <div> </div>}
                         <div className="fondo">
@@ -53,9 +60,11 @@ export default class Profile extends React.Component{
                                         </div>
                                     </div>
                         </div>
-                    
                     </div>       
                 </div>
+              </Col>
+            </Row>
+          </div>
         );
     }
 }

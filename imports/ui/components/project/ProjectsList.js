@@ -1,22 +1,35 @@
 import React, {PropTypes} from 'react';
 import { ListGroup, ListGroupItem, Alert, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const handleNav = (history, _id) => {
     history.push(`/projects/${_id}`);
+   
 };
 
 const ProjectsList = ({ history, projects }) => (
-    projects.length > 0 ? <ListGroup className="ProjectsList">
-        {projects.map(({_id, name, money, desc}) => (
-            <ListGroupItem key={ _id } onClick={ () => handleNav(history, _id ) }>
+   projects.length > 0 ? <ListGroup className="ProjectsList">
+        {projects.map(({_id, name, money, desc, userowner, skills, days}) => (
+            <div key={ _id } onClick={ () => handleNav(history, _id ) }>
             <div className="listproject">
-            <i className="name"><span className="fa fa-id-card-o" aria-hidden="true"> </span>  { name } </i> 
-            <i className="desc"><p><span className="fa fa-list" aria-hidden="true"> </span> {desc} </p></i>
-            <i className="money"><p><span className="fa fa-money" aria-hidden="true"> </span> {money} </p></i>
-            <i className="lupa"><span className="fa fa-search-plus" aria-hidden="true"> </span>  </i>
-            <i className="corazon"><span className="fa fa-heart-o" aria-hidden="true"> </span>  </i>
+            <ul className="dc ayn">
+            <h2><i className="name"><span className="fa fa-id-card-o" aria-hidden="true"> </span>  { name } </i></h2> 
+            <h2><i className="desc"><p><span className="fa fa-list" aria-hidden="true"> </span> {desc} </p></i></h2>
+            <h2><i className="desc"><p><span className="fa fa-user-o" aria-hidden="true"> </span> <Link to="/profile/:_id">{userowner}</Link> </p></i></h2>
+            <h2><i className="desc"><p><span className="fa fa-wrench" aria-hidden="true"> </span> Skills </p></i></h2>
+            <p>{skills.map((skill,index) => (
+                        <Button key={index}
+                                style={{margin: "5px"}}
+                        >
+                        { skill }
+                        </Button>
+                    ))}</p>
+            <i><Button className="money">   <span className="fa fa-money" aria-hidden="true"> </span> {money} </Button></i>
+            <i><Button className="days">   <span className="fa fa-calendar" aria-hidden="true"> </span> {days} </Button></i>
+            <i><Button className="postulate">    <span> Postulate </span>  </Button></i>
+            </ul>
             </div>
-            </ListGroupItem> 
+            </div> 
         )).reverse()}
         </ListGroup> :
         <Alert bsStyle="warning"> No Projects yet. </Alert>

@@ -7,8 +7,8 @@ export default class SkillsList extends Component{
     console.log('hola desde skills list');
     }
     render(){
-        let { selectSkill } = this.props;
-        let {skills} = this.props.onSendProf;
+        let { selectSkill, skills } = this.props;
+      {/*  let {skills} = this.props.onSendProf; */} 
              return (
                 skills.length > 0 ? 
                 <div>
@@ -17,9 +17,7 @@ export default class SkillsList extends Component{
                                 style={{margin: "5px"}}
                                 name={skills}
                                 ref={skills}
-                                onClick={() => {selectSkill(name);
-                                                this.props.onOpenSkill
-                                                }}
+                                onClick={() => {selectSkill(name);}}
                         >
                                 { name }
                         </Button>

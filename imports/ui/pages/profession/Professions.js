@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Row, Col, Button } from 'react-bootstrap';
 
 import ProfessionsList from '../../containers/profession/ProfessionsList';
-import SkillsList from '../../containers/skill/SkillsList';
+import SkillsList from '../../containers/profession/ViewProfession';
 
 export default class Professions extends Component{
   constructor(props){
@@ -20,19 +20,13 @@ export default class Professions extends Component{
     });
   }
   handleOpenSkill(event){
-    event.preventDefault();
     this.setState({
       openSkill : true
     });
-  }
-  renderOpenSkill(){
-    if(this.state.openSkill){
-      return(
-        <SkillsList onSendProf={this.state.selectedProf.bind(this)} />
-      );
-    }
+    setTimeout(() => {console.log(this.state.openSkill)}, 50)
   }
     render(){
+      const {openSkill} = this.state;   
       return(
         <div className="Professions"> 
         <Row>
@@ -46,7 +40,7 @@ export default class Professions extends Component{
             </div>
             <ProfessionsList selectedProf={this.selectedProf.bind(this)}
                              onOpenSkill={this.handleOpenSkill.bind(this)}/>
-           {this.renderOpenSkill}
+           {openSkill && <SkillsList selectedProf={this.state.selectedProf} />}
           </Col>
         </Row>
       </div>        

@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
-
+import { Row, Col, Button } from 'react-bootstrap';
 export default class FindPeople extends React.Component{
     constructor(props){
     super(props);
@@ -11,8 +11,14 @@ export default class FindPeople extends React.Component{
 }
 render(){
     return (
-        <div className="search"> 
-        <div className="text-center">
+        <div className="container">
+        <Row>
+          <Col xs={ 12 }>
+            <div className="page-header clearfix">
+             <div className="container"> <h3 className="pull-left"> <label>Search...</label> </h3> </div>
+            </div>
+            <div className="search">
+            <div className="text-center">
             <img src="/img/avatar-men.jpg" className="img-circle" alt="Cinque Terre" width="304" height="236"/>
             <div>
             <button type="button" className="btn btn-outline-secondary"> <span className="glyphicon glyphicon-chevron-left"></span>  </button>
@@ -29,13 +35,16 @@ render(){
                     <span className="glyphicon glyphicon-star-empty"></span>
                     <span className="glyphicon glyphicon-star-empty"></span>
                 </p>
-                <div>
-                    <a href="/notification" align="center" className="btn btn-primary">  <span className="glyphicon glyphicon-ok"></span> </a>
-                    <a href="#" align="center" className="btn btn-default">  <span className="glyphicon glyphicon-remove"></span> </a>
+                <div className="container">
+                    <Button  className="btn btn-primary">  <span className="glyphicon glyphicon-ok"></span> </Button>
+                    <Button  className="btn btn-default">  <span className="glyphicon glyphicon-remove"></span> </Button>
                 </div>
             </div>
         </div>
-    </div>
+            </div>
+          </Col>
+        </Row>
+        </div>
     );
 }
 }
