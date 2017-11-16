@@ -29,14 +29,14 @@ const ViewProject = ({ pro, history }) => {
             <div className="selectProject">
                 <div className="rq">
                     <ul className="dc ayn">
-                        <li> <span className="fa fa-id-card-o"> </span> <a href="#"> Name: </a> <label> {pro && pro.name}  </label> </li>
-                        <li> <span className="fa fa-list"> </span> <a href="#"> Description: </a>  {pro && pro.desc} </li> 
-                        <li> <span className="fa fa-calendar"> </span> <a href="#"> Days: </a> <label> {pro && pro.days} </label> </li>
-                        <li> <span className="fa fa-wrench"> </span> <a href="#"> Skills: </a> {pro && pro.skills }   </li>
-                        <li> <span className="fa fa-money"></span>  <a href="#"> Money: </a> <label> u$s {pro && pro.money} </label> </li>
-                        <li> <span className="fa fa-user-o"></span> <a href="#"> UserOwner:</a> <label> {pro && pro.userowner} </label> </li>
-                        <li> <span className="fa fa-users"></span> <a href="#"> UserWorker:</a> <label> </label> </li>
-                        <li> <span className="fa fa-circle-o-notch"></span> <a href="#"> State: </a> <label> Working </label> </li>
+                         <span className="fa fa-id-card-o"> </span> <a href="#"> Name: </a> <label> {pro && pro.name}  </label> 
+                         <span className="fa fa-list"> </span> <a href="#"> Description: </a>  {pro && pro.desc} 
+                         <span className="fa fa-calendar"> </span> <a href="#"> Days: </a> <label> {pro && pro.days} </label> 
+                         <span className="fa fa-wrench"> </span> <a href="#"> Skills: </a> {pro && pro.skills }   
+                         <span className="fa fa-money"></span>  <a href="#"> Money: </a> <label> u$s {pro && pro.money} </label> 
+                         <span className="fa fa-user-o"></span> <a href="#"> UserOwner:</a> <label> {pro && pro.userowner} </label> 
+                         <span className="fa fa-users"></span> <a href="#"> UserWorker:</a> <label> </label> 
+                         <span className="fa fa-circle-o-notch"></span> <a href="#"> State: </a> <label> Working </label> 
                     </ul>
                     <Button className="postulate"
                         onClick={() => handlePostulate(history, pro._id)}

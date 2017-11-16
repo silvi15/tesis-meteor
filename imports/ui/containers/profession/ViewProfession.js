@@ -5,11 +5,10 @@ import SkillsList from '../../components/profession/SkillsList';
 import Loading from '../../components/Loading.js';
 
 const composer = ({ selectedProf }, onData) => {
-  const profid = selectedProf
-  const subscription = Meteor.subscribe('professions.view', profid);
+  const subscription = Meteor.subscribe('professions.view', selectedProf);
   if (subscription.ready()) {
-    const prof = Professions.findOne(profid); 
-    onData(null, { prof });
+     const prof = Professions.findOne(selectedProf); 
+     onData(null, { prof });
   }
 };
 

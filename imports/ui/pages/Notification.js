@@ -10,52 +10,38 @@ export default class Notification extends React.Component{
     }
 }
 render(){
-    return (
-        <div className="container">  
-        <Row>
-          <Col xs={ 12 }>
-            <div className="page-header clearfix">
-             <div className="container"> <h3 className="pull-left"> <label>Notification</label> </h3> </div>
-            </div>
-            <div className="Notification">
-        <div className="text-center">
-                    <div className="row">
-                        <div className="col">
-                            <div className="card">
-                                <h5 className="mt-0">@Silvi</h5>
-                                <img src="/img/silvi.jpeg" className="img-circle" alt="Cinque Terre" width="80" height="80" />
-                            </div>
-                        </div>                        
-                        <div className="col">
-                                <div className="card">
-                                        <div className="card-header">
-                                            <h5 className="card-title"> E-commerce </h5>
-                                        </div>
-                                        <p>
-                                            <a href="/acceptProject" type="button" className="btn btn-primary">
-                                                <span className="glyphicon glyphicon-ok">  </span>
-                                            </a>
-                                            <a href="/projectinfo" type="button" className="btn btn-info">
-                                                <span className="glyphicon glyphicon-info-sign">  </span>
-                                            </a>
-                                            <a href="/home" type="button" className="btn btn-default">
-                                                <span className="glyphicon glyphicon-remove">  </span>
-                                            </a>
-                                        </p>
-                                </div>
+    return (      
+        <div className="Notification">    
+                <div className="user-content">
+                    <div className="card">
+                        <img src="/img/silvi.jpeg" className="avatar"/>
+                        <h5 className="name">@Silvi</h5>
+                    </div>
+
+                    <div className="action">
+                        <div className="card-header">
+                            <h5> E-commerce </h5>
                         </div>
-                        <div className="col">
-                                <div className="card">
-                                    <h5 className="mt-0">@Jhon</h5>
-                                    <img src="/img/avatar-men.jpg" className="img-circle" alt="Cinque Terre" width="80" height="80" />
-                                </div>
-                            </div>
+                            <button type="button" className="btn btn-primary">
+                                <span className="glyphicon glyphicon-ok">  </span>
+                            </button>
+                            <button type="button" className="btn btn-info">
+                                <span className="glyphicon glyphicon-info-sign">  </span>
+                            </button>
+                            <button type="button" className="btn btn-default">
+                                <span className="glyphicon glyphicon-remove">  </span>
+                            </button>
+                    </div>
+
+                </div>
+                <div className="user-content">
+                    <div className="card">
+                        <img src="/img/avatar-men.jpg" className="avatar"/>
+                        <h5 className="name">@Jhon</h5>
                     </div>
                 </div>
+                
         </div>
-          </Col>
-        </Row>
-      </div>  
     );
 }
 }

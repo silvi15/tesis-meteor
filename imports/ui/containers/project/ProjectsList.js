@@ -6,8 +6,7 @@ import Loading from '../../components/Loading.js';
 
 const composer = (params, onData) => {
     const subscription = Meteor.subscribe('projects.list');
-    const user = Meteor.user();
-    console.log('sus crear->crear', user) 
+    const user = Meteor.user(); 
     if (subscription.ready()) {
       const projects = Projects.find().fetch();
       const user = Meteor.user();

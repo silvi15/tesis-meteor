@@ -18,6 +18,12 @@ const getUserData = () => ({
     birthday:{ 
       day: document.querySelector('[name="birthday"]').value 
     },
+    celphone:{
+      number: document.querySelector('[name="celphone"]').value
+    },
+    address:{
+      name: document.querySelector('[name="address"]').value
+    },
     profession:{
        name: document.querySelector('[name="profession"]').value,
     },
@@ -55,6 +61,12 @@ const validate = () => {
       birthday: {
         required: true,
       },
+      celphone:{
+        required: true,
+      },
+      address:{
+        required: true,
+      },
       profession: {
         required: true,
       },
@@ -79,6 +91,12 @@ const validate = () => {
       },
       lastName: {
         required: 'Last name?',
+      },
+      celphone:{
+        required:'celphone?',
+      },
+      address:{
+        required: 'address',
       },
       birthday : {
         required: ' Birthday ?'

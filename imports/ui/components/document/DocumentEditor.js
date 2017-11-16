@@ -1,5 +1,3 @@
-/* eslint-disable max-len, no-return-assign */
-
 import React, { PropTypes } from 'react';
 import { FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
 import documentEditor from '../../../modules/document/document-editor';

@@ -1,5 +1,4 @@
 /* eslint-disable no-undef */
-
 import { Bert } from 'meteor/themeteorchef:bert';
 import { upsertDocument } from '../../api/documents/methods';
 import '../validation';

@@ -37,3 +37,4 @@ shell-server@0.2.3
 twbs:bootstrap
 accounts-facebook
 react-meteor-data
+email

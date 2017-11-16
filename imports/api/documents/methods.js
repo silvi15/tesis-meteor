@@ -2,8 +2,7 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import Documents from './documents';
 import rateLimit from '../../modules/rate-limit.js';
-/** validacion de las publicaciones  */
-/* valida aumentar una suscripcion a esta publicacion */
+
 export const upsertDocument = new ValidatedMethod({
   name: 'documents.upsert',
   validate: new SimpleSchema({
@@ -15,7 +14,7 @@ export const upsertDocument = new ValidatedMethod({
     return Documents.upsert({ _id: document._id }, { $set: document });
   },
 });
-/* eliminar una suscripcion a la publicacion */
+
 export const removeDocument = new ValidatedMethod({
   name: 'documents.remove',
   validate: new SimpleSchema({

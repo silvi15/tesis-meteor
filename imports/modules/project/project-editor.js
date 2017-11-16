@@ -6,21 +6,25 @@ let component;
 const handleUpsert = () => {
     const { pro } = component.props;
     const confirmation = pro && pro._id ? 'Project updated' : 'Project added!';
-    const upsert={
+    const upsert = {
         name: document.querySelector('[name="name"]').value.trim(),
         desc: document.querySelector('[name="desc"]').value.trim(),
         days: document.querySelector('[name="days"]').value.trim(),
         skills: component.state.selectedSkill,
         money: document.querySelector('[name="money"]').value.trim(),
         userowner: component.state.user,
-        createdAt: component.state.createdAt,        
+        createdAt: component.state.createdAt,
+        state: 'waiting',             
     };
+    
+    //if(pro && pro.notification) upsert.notification = pro.notification;
+    //console.log('pro.notification:', upsert.notification);
     if(pro && pro._id) upsert._id = pro._id;
+    
     upsertProject.call(upsert,(error, response) => {
         if(error){
             Bert.alert(error.reason,'danger');
         }else{
-            /* projectEditorForm : es el nombre del formulario q sale en components/ProjectEditor.js */
             component.projectEditorForm.reset(); 
             Bert.alert(confirmation,'success');
             component.props.history.push(`/projects/${response.insertId || pro._id }`);

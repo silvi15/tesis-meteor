@@ -43,19 +43,46 @@ Projects.schema = new SimpleSchema({
     userowner: {
         type: String,
         label: 'userowner',
-    } 
-    /*userworker: {
-        type: [String],
-        label: 'User who works in project'
-    },*/
-    /*startDate:{
+    },
+    state: {
+        type: String,
+        label: 'state',
+    },
+    userworker: {
+        type: String,
+        label: 'userworker'
+    },
+    datestart: {
         type: Date,
-        label: 'when project start',
+        label: 'datestart',
     },
-    state:{
-        type: [String],
-        label: 'state of prorject - red - yellow - green ',
+    datefinished: {
+        type: Date,
+        label: 'datefinished',
     },
-    */
+    "notifications.$._id":{
+        type: String,
+        label:'notifications-id',
+    },
+    "notifications.$.userowner":{
+        type: String,
+        label:'notifications-userowner',
+    },
+    "notifications.$.userpostulate":{
+        type: String,
+        label:'notifications-userpostulate',
+    },
+    "notifications.$.projectid":{
+        type: String,
+        label:'notifications-projectid',
+    },
+    "notifications.$.date": {
+        type: Date,
+        label: 'notifications-date',
+    },
+    "notification.$.statenot": {
+        type: String,
+        label: 'notifications-state',
+    },
 });
 Projects.attachSchema(Projects.schema);

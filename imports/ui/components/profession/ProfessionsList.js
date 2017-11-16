@@ -11,7 +11,6 @@ export default class ProfessionsList extends Component{
     constructor(props){
     super(props);
     this.state = {
-          passProfToParent : '',
           professions: this.props.professions,
           term: '',
     }    

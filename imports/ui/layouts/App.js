@@ -17,6 +17,12 @@ import NewDocument from '../pages/document/NewDocument';
 import EditDocument from '../containers/document/EditDocument';
 import ViewDocument from '../containers/document/ViewDocument';
 
+/*Mesagge */
+import Mesagges from '../pages/mesagge/Mesagges';
+import NewMesagge from '../pages/mesagge/NewMesagge';
+import EditMesagge from '../containers/mesagge/EditMesagge';
+import ViewMesagge from '../containers/mesagge/ViewMessage';
+
 /* proyect */
 import Projects from '../pages/project/Projects';
 import NewProject from '../containers/project/NewProject';
@@ -25,6 +31,14 @@ import ViewProject from '../containers/project/ViewProject';
 
 /* professions */
 import Professions from '../pages/profession/Professions';
+import NewProfession from '../pages/profession/NewProfession';
+import EditProfession from '../containers/profession/EditProfession';
+import ViewProfession from '../containers/profession/ViewProfession';
+/* country*/
+import Countrys from '../pages/country/Countrys';
+import NewCountry from '../pages/country/NewCountry';
+import EditCountry from '../containers/country/EditCountry';
+{/*import ViewCountry from '../containers/country/ViewCountry'; */}
 /* skill */
 import Skills from '../pages/skill/Skills';
 
@@ -53,16 +67,30 @@ const App = appProps => (
           <Route exact name="index" path="/" component={Index} />
           
           <Authenticated exact path="/projects" component = { Projects } {...appProps } />
-          <Authenticated exact path="/projects/new" component={NewProject} {...appProps} />
+          <Authenticated exact path="/projects/new" component={ NewProject } {...appProps} />
           <Authenticated exact path="/projects/:_id" component = { ViewProject } {...appProps } />
           <Authenticated exact path="/projects/:_id/edit" component = { EditProject } {...appProps } />
 
-          <Authenticated exact path="/documents" component={Documents} {...appProps} />
-          <Authenticated exact path="/documents/new" component={NewDocument} {...appProps} />
-          <Authenticated exact path="/documents/:_id" component={ViewDocument} {...appProps} />
-          <Authenticated exact path="/documents/:_id/edit" component={EditDocument} {...appProps} />
+          <Authenticated exact path="/documents" component={ Documents } {...appProps} />
+          <Authenticated exact path="/documents/new" component={ NewDocument } {...appProps} />
+          <Authenticated exact path="/documents/:_id" component={ ViewDocument } {...appProps} />
+          <Authenticated exact path="/documents/:_id/edit" component={ EditDocument } {...appProps} />
 
-          <Authenticated exact path="/professions" component={Professions} {...appProps} />  
+          <Authenticated exact path="/mesagges" component={ Mesagges } {...appProps} />
+          <Authenticated exact path="/mesagges/new" component={ NewMesagge } {...appProps} />
+          <Authenticated exact path="/mesagges/:_id" component={ ViewMesagge } {...appProps} />
+          <Authenticated exact path="/mesagges/:_id/edit" component={ EditMesagge } {...appProps} />
+
+          <Authenticated exact path="/professions" component={ Professions } {...appProps} />  
+          <Authenticated exact path="/professions/new" component={ NewProfession } {...appProps} />
+          <Authenticated exact path="/professions/:_id" component={ ViewProfession } {...appProps} />
+          <Authenticated exact path="/professions/:_id/edit" component={ EditProfession } {...appProps} />
+
+          <Authenticated exact path="/countrys" component={ Countrys } {...appProps} />  
+          <Authenticated exact path="/countrys/new" component={ NewCountry } {...appProps} />
+    {/*  <Authenticated exact path="/countrys/:_id" component={ ViewCountry } {...appProps} />*/}
+          <Authenticated exact path="/countrys/:_id/edit" component={ EditCountry } {...appProps} />
+
           <Authenticated exact path="/skills" component={Skills} {...appProps} />
 {/*          <Authenticated exact path="/skills/new" component={NewSkill} {...appProps} />
           <Authenticated exact path="/skills/:_id" component={ViewSkill} {...appProps} />

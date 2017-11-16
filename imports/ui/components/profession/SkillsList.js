@@ -4,27 +4,20 @@ import { Button, Alert } from 'react-bootstrap';
 export default class SkillsList extends Component{
     constructor(props){
     super(props); 
-    console.log('hola',props.prof);
     }
     render(){
-        let { selectSkill } = this.props;
-        let {skills} = this.props.prof;
-             return (
-                skills.length > 0 ? 
-                <div>
-                    {skills.map(({_id, name}) => (
-                        <Button key={_id}
-                                style={{margin: "5px"}}
-                                name={skills}
-                                ref={skills}
-                                onClick={() => {selectSkill(name)}}
-                        >
-                                { name }
-                        </Button>
-                    ))}
-                </div>
-                :
-            <Alert bsStyle="warning">No Skills yet.</Alert>
+        //const { selectSkill } = this.props;
+        const { skills } = this.props.prof;
+             return ( 
+                <div className="skills">{skills.map((skill,index) => (
+                    <Button key={index}
+                            name={skill}
+                            ref={skill}
+                            onClick={() => {this.props.selectSkill(skill);}}
+                    >
+                    { skill }
+                    </Button>
+                ))}</div>
         )
     }
 }

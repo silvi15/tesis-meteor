@@ -1,41 +1,71 @@
-import React, {PropTypes} from 'react';
-import { ListGroup, ListGroupItem, Alert, Button } from 'react-bootstrap';
+import React, {PropTypes, Component} from 'react';
+import { ListGroup, ListGroupItem, Alert, Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import notificationEditor from '../../../modules/project/notification-editor';
 
-const handleNav = (history, _id) => {
-    history.push(`/projects/${_id}`);
-   
-};
-
-const ProjectsList = ({ history, projects }) => (
-   projects.length > 0 ? <ListGroup className="ProjectsList">
-        {projects.map(({_id, name, money, desc, userowner, skills, days}) => (
-            <div key={ _id } onClick={ () => handleNav(history, _id ) }>
-            <div className="listproject">
-            <ul className="dc ayn">
-            <h2><i className="name"><span className="fa fa-id-card-o" aria-hidden="true"> </span>  { name } </i></h2> 
-            <h2><i className="desc"><p><span className="fa fa-list" aria-hidden="true"> </span> {desc} </p></i></h2>
-            <h2><i className="desc"><p><span className="fa fa-user-o" aria-hidden="true"> </span> <Link to="/profile/:_id">{userowner}</Link> </p></i></h2>
-            <h2><i className="desc"><p><span className="fa fa-wrench" aria-hidden="true"> </span> Skills </p></i></h2>
-            <p>{skills.map((skill,index) => (
-                        <Button key={index}
-                                style={{margin: "5px"}}
-                        >
-                        { skill }
-                        </Button>
-                    ))}</p>
-            <i><Button className="money">   <span className="fa fa-money" aria-hidden="true"> </span> {money} </Button></i>
-            <i><Button className="days">   <span className="fa fa-calendar" aria-hidden="true"> </span> {days} </Button></i>
-            <i><Button className="postulate">    <span> Postulate </span>  </Button></i>
-            </ul>
+export default class ProjectsList extends Component{
+    constructor(props){
+        super(props);  
+        this.state = {
+            projects: this.props.projects,
+            user: Meteor.users.findOne(Meteor.userId()),
+            notification:{
+                selectedProject:'',
+                userpostulate:'',
+                userowner:'',
+            }
+        }
+    }
+    componentDidMount(){
+        notificationEditor({ component: this });
+    }
+    handleSubmit(event) {
+        event.preventDefault();
+    }
+    selectedProject(idproject, userpostulate, userowner){
+        this.setState({
+            notification: { 
+            selectedProject: idproject,
+            userpostulate: userpostulate,
+            userowner: userowner,
+            }
+        });
+    }
+    render(){
+        const { user } = this.state;
+        const { projects } = this.state;
+        return(
+            <form ref={form => this.notificationEditForm = form }
+                  onSubmit={ this.handleSubmit }
+            >
+            <div className="ProjectsList">
+            {projects.map(({_id, name, money, desc, userowner, skills, days}) => (
+                <div key={ _id } >
+                <div className="listproject">
+                <ul className="dc ayn">
+                <h3><div className="name"> { name } </div></h3> 
+                <h5><div className="desc"><p><span className="fa fa-list" aria-hidden="true"> </span> {desc} </p></div></h5>
+                <h5><div className="desc"><p><span className="fa fa-user-o" aria-hidden="true"> </span> <Link to="/profile/:_id">{userowner}</Link> </p></div></h5>
+                <h5><div className="desc"><p><span className="fa fa-wrench" aria-hidden="true"> </span> Skills </p></div></h5>
+                <p>{skills.map((skill,index) => (
+                            <Button key={index}
+                                    style={{margin: "5px"}}
+                            >
+                            { skill }
+                            </Button>
+                        ))}</p>
+                <i><Button className="money"><span className="fa fa-money" aria-hidden="true"> </span> {money} </Button></i>
+                <i><Button className="days"><span className="fa fa-calendar" aria-hidden="true"> </span> {days} </Button></i>
+                <i><Button className="postulate"
+                        type="submit"
+                        onClick={()=>{this.selectedProject(_id,user,userowner)}}>  
+                    { projects && projects._id ? 'Save Changes' : 'Postulated!' }
+                </Button></i>
+                </ul>
+                </div>
+                </div> 
+            )).reverse()}
             </div>
-            </div> 
-        )).reverse()}
-        </ListGroup> :
-        <Alert bsStyle="warning"> No Projects yet. </Alert>
-);
-ProjectsList.propTypes = {
-    history: PropTypes.object,
-    projects: PropTypes.array,
-};
-export default ProjectsList;
+       </form>);
+    }
+} 

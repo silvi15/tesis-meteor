@@ -10,7 +10,7 @@ const Menu = () => (
                 <span className="glyphicon glyphicon-briefcase"></span>
              </NavLink>  
 
-            <NavLink to="/inbox" type="button" className="btn btn-secondary">
+            <NavLink to="/mesagges" type="button" className="btn btn-secondary">
                 <span className="glyphicon glyphicon-envelope"></span>
             </NavLink>
 

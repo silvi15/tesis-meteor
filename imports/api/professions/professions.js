@@ -17,7 +17,6 @@ Professions.deny({
 Professions.schema = new SimpleSchema ({
     name: {
         type: String,
-    },
-    skills:{type: String},
+    }
 });
 Professions.attachSchema(Professions.schema);

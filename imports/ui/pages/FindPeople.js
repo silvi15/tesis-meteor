@@ -11,12 +11,6 @@ export default class FindPeople extends React.Component{
 }
 render(){
     return (
-        <div className="container">
-        <Row>
-          <Col xs={ 12 }>
-            <div className="page-header clearfix">
-             <div className="container"> <h3 className="pull-left"> <label>Search...</label> </h3> </div>
-            </div>
             <div className="search">
             <div className="text-center">
             <img src="/img/avatar-men.jpg" className="img-circle" alt="Cinque Terre" width="304" height="236"/>
@@ -41,10 +35,8 @@ render(){
                 </div>
             </div>
         </div>
-            </div>
-          </Col>
-        </Row>
-        </div>
+    </div>
+          
     );
 }
 }

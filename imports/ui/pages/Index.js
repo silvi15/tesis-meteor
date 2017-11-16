@@ -3,7 +3,7 @@ import { Jumbotron } from 'react-bootstrap';
 
 const Index = () => (
   
-    <Jumbotron className="text-center">
+    <div className="text-center">
       <div className="container-fluid bg-3 text-center">
       <h3>Easy and Fast way to creat your Proyect!</h3>
       <div className="row">
@@ -25,7 +25,7 @@ const Index = () => (
                   </div>
               </div>
             </div>
-    </Jumbotron>
+    </div>
   
 );
 

@@ -11,42 +11,60 @@ export default class Profile extends React.Component{
             user: Meteor.users.findOne(Meteor.userId()),
             }
     }
+    
     render(){
         const {user} = this.state;
         const showWorkers = Roles.userIsInRole(Meteor.userId(),['worker']);
         const showEnterprise = Roles.userIsInRole(Meteor.userId(),['enterprise']);
         const showAdmin = Roles.userIsInRole(Meteor.userId(),['admin']);
-        const skills = user && user.profile && user.profile.name && user.profile.name.skills || [];
+        const skills = user && user.profile && user.profile.name && user.profile.skills.name || [];
         return (
-            <div className="container">  
-            <Row>
-              <Col xs={ 12 }>
-                <div className="page-header clearfix">
-                 <div className="container"> <h3 className="pull-left"> <label>Profile</label> </h3> </div>
-                </div>
                 <div className="profile">
                     <div className="text-center">
-                        { showAdmin && <div>soy admin </div> || <div> </div>}
-                        <div className="fondo">
+                        { showAdmin && <div> </div> || <div> </div>}
+                        { showEnterprise && <div></div> ||<div></div>}
+                        { showWorkers && <div></div> || <div></div>} 
+                    </div>
+                    <div className="fondo">
+                        <div className="portada">
                         <img src="/img/silvi.jpeg" className="avatar" /> 
-                        
-                        <div className="name">   <label> <h2> {user.profile.name.first}, {user.profile.name.last} </h2> </label> </div>
-                        <div className="profession"> <label><h3> {user.profile.name.profession} </h3></label></div> 
-                        
-                        <div className="description"> <label><h4> {user.profile.name.profiled} </h4></label> </div>                                
                         </div>
+                    </div>
+                    <div className="personal-info">
+                        <h4>Personal Information</h4>
+                        <div className="name">
+                        <h5><i><span className="fa fa-user-circle-o" aria-hidden="true"></span> </i>
+                        {user.profile.name.first}, {user.profile.name.last}</h5>                        
+                        <h5><i><span className="fa fa-birthday-cake" aria-hidden="true"></span> </i>
+                        {user.profile.birthday.day}</h5>
+                        <h5><i><span className="fa fa-phone" aria-hidden="true"></span> </i>  
+                        {user.profile.celphone.number}</h5>
+                        <h5><i><span className="fa fa-location-arrow" aria-hidden="true"></span> </i>  
+                        {user.profile.country.name}, {user.profile.country.state}, {user.profile.address.name} </h5>
+                        
+                        <h5><i><span className="fa fa-envelope-o" aria-hidden="true"></span> </i>  
+                        {user.emails[0].address} </h5>
+                        </div>
+                    </div>
+                    <div className="profession">
+                        <h4>Profile</h4>
+                        <h5><i><span className="fa fa-briefcase" aria-hidden="true"></span> </i>
+                        {user.profile.profession.name}</h5>
+                        <h5><i><span className="fa fa-list" aria-hidden="true"> </span> </i>  
+                        {user.profile.profiled.name}</h5>
+                    </div>    
                         <div className="skills" >
-                        <h3><p><label>Skills</label></p></h3>
-                        { skills.map( (skill,index) => {
-                            return ( <button key={index} type="button" className="btn btn-primary"> 
-                                            {skill}
+                        <h4>Skills</h4>
+                        { skills.map((name,index) => {
+                            return ( <Button key={index} type="button" className="btn btn-primary"> 
+                                            {name}
                                         <p><span className="glyphicon glyphicon-star-empty"></span></p>
-                                    </button> 
+                                    </Button> 
                                     )})}  
                         </div>
-                      
+                            
                         <div className="comments">
-                         <h3><p><label>Comments</label></p></h3>
+                         <h4>Comments</h4>
                             <img src="/img/avatar-men.jpg" className="img-circle" alt="Cinque Terre" width="30" height="30" />
                                     <div className="or">
                                         <div className="bla">
@@ -59,12 +77,8 @@ export default class Profile extends React.Component{
                                         </p>
                                         </div>
                                     </div>
-                        </div>
-                    </div>       
+                        </div>       
                 </div>
-              </Col>
-            </Row>
-          </div>
         );
     }
 }

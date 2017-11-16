@@ -23,32 +23,33 @@ render(){
              <div className="container"> <h3 className="pull-left"> <label>Home</label> </h3> </div>
             </div>
             <div className="home">
-        {showWorker &&  <div> soy worker </div> || <div></div> }
+        {showWorker &&  
         <div className="workin">
             <h4>Work in</h4>
             <div className="rp bra brb agk">
                 <div className="rq">
                     <ul className="dc ayn">
-                        <li> <span className="glyphicon glyphicon-list-alt"> </span> <a href="#"> Name: </a> <label> E-commerce </label> </li>
-                        <li> <span className="glyphicon glyphicon-user"> </span> <a href="#"> From </a> <label> @Jhon </label> </li> 
-                        <li> <span className="glyphicon glyphicon-calendar"> </span> <a href="#"> Start</a> <label> 15/08/2017 </label> </li>
-                        <li> <span className="glyphicon glyphicon-calendar"> </span> Finished <a href="#"></a> <label> 25/08/2017 </label> </li>
-                        <li> <span className="glyphicon glyphicon-record "></span> State <a href="#"> </a> <label> working </label> </li>
+                        <p> <span className="glyphicon glyphicon-list-alt"> </span> <a href="#"> Name: </a> <label> E-commerce </label> </p>
+                        <p> <span className="glyphicon glyphicon-user"> </span> <a href="#"> From </a> <label> @Jhon </label> </p> 
+                        <p> <span className="glyphicon glyphicon-calendar"> </span> <a href="#"> Start</a> <label> 15/08/2017 </label> </p>
+                        <p> <span className="glyphicon glyphicon-calendar"> </span> Finished <a href="#"></a> <label> 25/08/2017 </label> </p>
+                        <p> <span className="glyphicon glyphicon-record "></span> State <a href="#"> </a> <label> working </label> </p>
                     </ul>
                 </div>
             </div>            
         </div>
+        || <div></div> }
         <div className="people-work-in-my-project">
-            <h4>People Work in My Project</h4>
+            <h4>Project Finish</h4>
             <div className="rp bra brb agk">
                 <div className="rp bra brb agk">
                     <div className="rq">
                         <ul className="dc ayn">
-                            <li> <span className="glyphicon glyphicon-list-alt"> </span> <a href="#"> Name </a> <label> Blog </label> </li>
-                            <li> <span className="glyphicon glyphicon-user"> </span> <a href="#"> User </a> <label>  @peter </label> </li>
-                            <li> <span className="glyphicon glyphicon-calendar"> </span> <a href="#"> Start</a> <label> 25/08/2017 </label> </li>
-                            <li> <span className="glyphicon glyphicon-calendar"> </span> Finished <a href="#"> </a> <label> 10/09/2017 </label> </li>
-                            <li> <span className="glyphicon glyphicon-record "></span> State <a href="#"> </a> <label> working </label> </li>
+                            <p> <span className="glyphicon glyphicon-list-alt"> </span> <a href="#"> Name </a> <label> Blog </label> </p>
+                            <p> <span className="glyphicon glyphicon-user"> </span> <a href="#"> User </a> <label>  @peter </label> </p>
+                            <p> <span className="glyphicon glyphicon-calendar"> </span> <a href="#"> Start</a> <label> 25/08/2017 </label> </p>
+                            <p> <span className="glyphicon glyphicon-calendar"> </span> Finished <a href="#"> </a> <label> 10/09/2017 </label> </p>
+                            <p> <span className="glyphicon glyphicon-record "></span> State <a href="#"> </a> <label> working </label> </p>
                         </ul>
                     </div>
                 </div> 

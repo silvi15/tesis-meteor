@@ -14,16 +14,16 @@ export default class Professions extends Component{
     }
   }
   selectedProf(idprof){
-    console.log('idprof',idprof._str);
+   {/* console.log('idprof',idprof); */}
     this.setState({
-      selectedProf : idprof._str
+      selectedProf : idprof
     });
   }
   handleOpenSkill(event){
     this.setState({
       openSkill : true
     });
-    setTimeout(() => {console.log(this.state.openSkill)}, 50)
+   {/* setTimeout(() => {console.log(this.state.openSkill)}, 50) */}
   }
     render(){
       const {openSkill} = this.state;   
