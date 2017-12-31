@@ -6,7 +6,6 @@ import { Row, Col, Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
 import MenuProject from '../../components/MenuProject';
-
 export default class Home extends React.Component{
     constructor(props){
     super(props);
@@ -18,12 +17,7 @@ render(){
     const showWorker = Roles.userIsInRole(Meteor.userId(),['worker']);
     const showEnterprise = Roles.userIsInRole(Meteor.userId(),['enterprise']);
     return (
-        <div className="container">  
-            <div className="page-header clearfix">
-             <div className="container"> <h3 className="pull-left"> <label>Home</label> </h3> </div>
                  <MenuProject />  
-            </div>                
-        </div>
     );
 }
 }

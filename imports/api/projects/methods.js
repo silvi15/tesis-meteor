@@ -14,8 +14,11 @@ export const upsertProject = new ValidatedMethod({
         money: { type: String, optional: true },
         createdAt: { type: Date},
         userowner: { type: String},
-        state:{type: String, optional: true}, 
-    }).validator(),
+        state:{ type: String, optional: true},
+        userworker:{ type: String, optional: true},
+        dateStart: { type: Date, optional: true },
+        dateFinish: { type: Date,optional: true },
+      }).validator(),
     run(document) {
         return Projects.upsert({_id: document._id},{ $set: document });
     },    
@@ -60,11 +63,10 @@ export const upsertNotification = new ValidatedMethod({
   }).validator(),
   run(document) {
     console.log("Document-methods: ", document);
-    return Projects.upsert({ _id: document._id },{ $push: { notifications: document } });
+    return Projects.upsert({ _id: document.projectid },{ $push: { notifications: document } });
       //return Projects.upsert({_id: document._id},{ $set: document });
   }
 });
-
 export const removeNotification = new ValidatedMethod({
   name: 'notifications.remove',
   validate: new SimpleSchema({
@@ -74,7 +76,6 @@ export const removeNotification = new ValidatedMethod({
     Projects.remove(_id);
   },
 });
-  
 rateLimit({
     methods: [
       upsertProject,

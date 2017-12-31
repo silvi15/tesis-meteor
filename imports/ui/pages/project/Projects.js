@@ -8,32 +8,7 @@ import projectEditor from '../../../modules/project/project-editor';
 export default class Projects extends Component {
     constructor(props){
       super(props);
-      /*
-      this.state={
-        user: Meteor.users.findOne(Meteor.userId()),
-        notification:{
-          selectedProject:'',
-          userpostulate:'',
-          userowner:'',
-        }
-      }
-      */
     }
-    /*
-    componentDidMount(){
-      projectEditor({ component: this });
-    }
-
-    selectedProject(idProject, userpostulate, userowner){
-      this.setState({
-        notification:{
-          selectedProject: idProject,
-          userpostulate: userpostulate,
-          userowner: userowner,
-        }
-      });
-    }
-    */
     render(){
       const showEnterprise = Roles.userIsInRole(Meteor.userId(),['enterprise']);
       //const {user} = this.state;

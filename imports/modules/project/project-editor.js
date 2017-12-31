@@ -14,7 +14,10 @@ const handleUpsert = () => {
         money: document.querySelector('[name="money"]').value.trim(),
         userowner: component.state.user,
         createdAt: component.state.createdAt,
-        state: 'waiting',             
+        state: 'waiting',
+        userworker: 'anyones',
+        dateStart: new Date(),
+        dateFinish: new Date(),            
     };
     
     //if(pro && pro.notification) upsert.notification = pro.notification;

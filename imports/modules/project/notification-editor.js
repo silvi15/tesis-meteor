@@ -6,29 +6,31 @@ import uuid from 'uuid';
 let component;
 
 const handleUpsert = () => {
-    const { not } =  component.props;
-    const confirmation = not && not._id ? 'Notification Updated' : 'Add Notification';
+    const { notification } =  component.state;
+    console.log('not',notification);
+    const confirmation = notification && notification._id ? 'Notification Updated' : 'Add Notification';
     const upsert = {
         notifications:{
-            userpostulate: component.state.userpostulate,
-            userowner: component.state.userowner,
-            projectid: component.state.projectid,
+            userpostulate: notification.userpostulate,
+            userowner: notification.userowner,
+            projectid: notification.selectedProject,
             statenot: 'new',
             date: new Date(),
         },
     };
-    if(not && not._id) {
-        upsert.notifications._id = not._id;
+    if(notification && notification._id) {
+        upsert.notifications._id = notification._id;
     }else{
         upsert.notifications._id= uuid.v4();
     }
+    console.log("Upsert: ", upsert);
     upsertNotification.call(upsert,(error, response) => {
         if(error){
-            Bert.alert(error.reason,'danger');
+            Bert.alert(error.message,'danger');
         }else{
             component.notificationEditForm.reset();
             Bert.alert(confirmation,'success');
-            component.props.history.push(`/projects/${response.insertId || not._id}`);
+            component.props.history.push(`/projects/${response.insertId || notification._id}`);
         }
     });
 };

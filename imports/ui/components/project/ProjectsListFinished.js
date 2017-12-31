@@ -1,12 +1,11 @@
 import React, {PropTypes, Component} from 'react';
-import { ListGroup, ListGroupItem, Alert, Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { ListGroup, ListGroupItem, Alert, Button, Form, Nav } from 'react-bootstrap';
+import { Link, NavLink } from 'react-router-dom';
 import notificationEditor from '../../../modules/project/notification-editor';
 
-export default class ProjectsList extends Component{
+export default class ProjectsListWorking extends Component{
     constructor(props){
-        super(props);
-        console.log('props por profesion',props);  
+        super(props);  
         this.state = {
             projects: this.props.projects,
             user: Meteor.users.findOne(Meteor.userId()),
@@ -35,33 +34,37 @@ export default class ProjectsList extends Component{
     render(){
         const { user } = this.state;
         const { projects } = this.state;
-        return(
+        return(   
             <form ref={form => this.notificationEditForm = form }
                   onSubmit={ this.handleSubmit }
             >
             <div className="ProjectsList">
-            {projects.map(({_id, name, money, desc, userowner, skills, days}) => (
+            {projects.map(({_id, name, desc, userowner, state, skills }) => (
                 <div key={ _id } >
                 <div className="listproject">
                 <ul className="dc ayn">
                 <h3><div className="name"> { name } </div></h3> 
                 <h5><div className="desc"><p><span className="fa fa-list" aria-hidden="true"> </span> {desc} </p></div></h5>
-                <h5><div className="desc"><p><span className="fa fa-user-o" aria-hidden="true"> </span> <Link to="/profile/:_id">{userowner}</Link> </p></div></h5>
                 <h5><div className="desc"><p><span className="fa fa-wrench" aria-hidden="true"> </span> Skills </p></div></h5>
                 <p>{skills.map((skill,index) => (
                             <Button key={index}
                                     style={{margin: "5px"}}
                             >
                             { skill }
+                            <span className="fa fa-star" aria-hidden="true"> </span>
+                            <span className="fa fa-star" aria-hidden="true"> </span>
+                            <span className="fa fa-star" aria-hidden="true"> </span>
                             </Button>
                         ))}</p>
-                <i><Button className="money"><span className="fa fa-money" aria-hidden="true"> </span> {money} </Button></i>
-                <i><Button className="days"><span className="fa fa-calendar" aria-hidden="true"> </span> {days} </Button></i>
-                <i><Button className="postulate"
-                        type="submit"
-                        onClick={()=>{this.selectedProject(_id,user,userowner)}}>  
-                    { projects && projects._id ? 'Save Changes' : 'Postulated!' }
-                </Button></i>
+                 
+                <h5><div className="desc"><p><span className="fa fa-comment" aria-hidden="true"> </span> Comment </p></div></h5>
+                <div className="comments">
+                    <img class="mr-3" src="/img/avatar-men.jpg" className="img-circle" alt="Cinque Terre" width="30" height="30" />
+                        <div class="media-body">
+                            <h5 class="mt-0">Media heading</h5>
+                            Its was a pleasure work with you!! you're fantastic, I will going to call you again
+                        </div>
+                    </div>              
                 </ul>
                 </div>
                 </div> 

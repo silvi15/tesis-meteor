@@ -45,6 +45,7 @@ export default class Profile extends React.Component{
                         <h5><i><span className="fa fa-envelope-o" aria-hidden="true"></span> </i>  
                         {user.emails[0].address} </h5>
                         </div>
+                        <i><Button className="mensaje"><span className="fa fa-envelope-o" aria-hidden="true"> </span></Button></i>    
                     </div>
                     <div className="profession">
                         <h4>Profile</h4>

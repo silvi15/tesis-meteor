@@ -20,7 +20,7 @@ render(){
 
                     <div className="action">
                         <div className="card-header">
-                            <h5> E-commerce </h5>
+                            <h5> Testament </h5>
                         </div>
                             <button type="button" className="btn btn-primary">
                                 <span className="glyphicon glyphicon-ok">  </span>
@@ -37,7 +37,7 @@ render(){
                 <div className="user-content">
                     <div className="card">
                         <img src="/img/avatar-men.jpg" className="avatar"/>
-                        <h5 className="name">@Jhon</h5>
+                        <h5 className="name">@Colegio</h5>
                     </div>
                 </div>
                 

@@ -17,7 +17,19 @@
 };
 .listproject .desc {
     color: black;
-},
+};
+.listproject .time {
+    color: black;
+};
+.listproject .state {
+    p span{
+        color: black;
+    }
+    color: green;
+};
+.listproject .comments{
+    color: black
+};
 .listproject button {
     background-color: #ffffff;
     color: #2d84cc;
@@ -50,6 +62,16 @@ i .postulate {
     border-radius: 5px;
     margin: 1em;
     padding: 0.5em;
+};
+i .finish {
+    background-color: #08487c;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    border: 1px solid #1f6fb1;
+    border-radius: 5px;
+    margin: 1em;
+    padding: 0.5em;
+    width: 200px;
 };
 .profile .avatar{
     width: 80px;
@@ -97,8 +119,13 @@ i .postulate {
         margin-bottom: 20px;
     }
     i span {
-        margin: 0px 0px 0px 10px ;
+        margin: 0px 10px 0px 10px ;
     }
+    i button {
+        color: #fff;
+        padding: 5px;
+    }
+     
 };
 .profile .profession{
     text-align: justify;
