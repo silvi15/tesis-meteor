@@ -48,18 +48,6 @@ Projects.schema = new SimpleSchema({
         type: String,
         label: 'state',
     },
-    userworker: {
-        type: String,
-        label: 'userworker'
-    },
-    datestart: {
-        type: Date,
-        label: 'datestart',
-    },
-    datefinished: {
-        type: Date,
-        label: 'datefinished',
-    },
     "notifications.$._id":{
         type: String,
         label:'notifications-id',

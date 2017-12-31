@@ -18,9 +18,9 @@ const handleUpsert = () => {
         },
     };
     if(not && not._id) {
-        upsert._id = not._id;
+        upsert.notifications._id = not._id;
     }else{
-        upsert._id= uuid.v4();
+        upsert.notifications._id= uuid.v4();
     }
     upsertNotification.call(upsert,(error, response) => {
         if(error){

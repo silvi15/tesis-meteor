@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Row, Col, Button } from 'react-bootstrap';
-
-export default class Home extends React.Component{
+import MenuProject from '../../components/MenuProject';
+export default class ProjectsWorking extends React.Component{
     constructor(props){
     super(props);
     this.state = {
@@ -16,11 +16,13 @@ render(){
     const showEnterprise = Roles.userIsInRole(Meteor.userId(),['enterprise']);
     /* las variables que no muestre las tengo q aclarar aca, para que no explote*/
     return (
-        <div className="container">  
+        <div className="container">
+         
         <Row>
           <Col xs={ 12 }>
             <div className="page-header clearfix">
              <div className="container"> <h3 className="pull-left"> <label>Home</label> </h3> </div>
+             <MenuProject />
             </div>
             <div className="home">
         {showWorker &&  
@@ -38,23 +40,7 @@ render(){
                 </div>
             </div>            
         </div>
-        || <div></div> }
-        <div className="people-work-in-my-project">
-            <h4>Project Finish</h4>
-            <div className="rp bra brb agk">
-                <div className="rp bra brb agk">
-                    <div className="rq">
-                        <ul className="dc ayn">
-                            <p> <span className="glyphicon glyphicon-list-alt"> </span> <a href="#"> Name </a> <label> Blog </label> </p>
-                            <p> <span className="glyphicon glyphicon-user"> </span> <a href="#"> User </a> <label>  @peter </label> </p>
-                            <p> <span className="glyphicon glyphicon-calendar"> </span> <a href="#"> Start</a> <label> 25/08/2017 </label> </p>
-                            <p> <span className="glyphicon glyphicon-calendar"> </span> Finished <a href="#"> </a> <label> 10/09/2017 </label> </p>
-                            <p> <span className="glyphicon glyphicon-record "></span> State <a href="#"> </a> <label> working </label> </p>
-                        </ul>
-                    </div>
-                </div> 
-            </div>
-        </div>        
+        || <div></div> }        
         </div>
           </Col>
         </Row>

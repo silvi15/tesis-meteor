@@ -34,6 +34,10 @@ import Professions from '../pages/profession/Professions';
 import NewProfession from '../pages/profession/NewProfession';
 import EditProfession from '../containers/profession/EditProfession';
 import ViewProfession from '../containers/profession/ViewProfession';
+/*home */
+import Home from '../pages/home/Home';
+import ProjectsWorking from '../pages/home/ProjectsWorking';
+import ProjectsFinished from '../pages/home/ProjectsFinished';
 /* country*/
 import Countrys from '../pages/country/Countrys';
 import NewCountry from '../pages/country/NewCountry';
@@ -52,7 +56,7 @@ import NotFound from '../pages/NotFound';
 import Rol from '../pages/Rol';
 
 //Pages
-import Home from '../pages/Home';
+
 import Inbox from '../pages/Inbox';
 import FindPeople from '../pages/FindPeople';
 import Notification from '../pages/Notification';
@@ -97,6 +101,9 @@ const App = appProps => (
           <Authenticated exact path="/skills/:_id/edit" component={EditSkill} {...appProps} />
 */}          
           <Authenticated exact path="/home" component = { Home } {...appProps} />
+          <Authenticated exact path="/projectsworking" component = { ProjectsWorking } {...appProps} />
+          <Authenticated exact path="/projectsfinished" component = { ProjectsFinished } {...appProps} />
+          
           <Authenticated exact path="/inbox" component = { Inbox } {...appProps} />
           <Authenticated exact path="/findPeople" component = { FindPeople } {...appProps}  />          
           <Authenticated exact path="/notification" component = { Notification } {...appProps } />

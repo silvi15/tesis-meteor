@@ -14,10 +14,7 @@ export const upsertProject = new ValidatedMethod({
         money: { type: String, optional: true },
         createdAt: { type: Date},
         userowner: { type: String},
-        state:{type: String, optional: true},
-        userworker: { type: String, optional: true },
-        datestart: { type: Date, optional: true },
-        datefinished: { type: Date, optional: true }, 
+        state:{type: String, optional: true}, 
     }).validator(),
     run(document) {
         return Projects.upsert({_id: document._id},{ $set: document });
