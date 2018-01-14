@@ -23,6 +23,14 @@ export default class MesaggeEditor extends React.Component {
         />
       </FormGroup>
       <FormGroup>
+        <ControlLabel>Subject</ControlLabel>
+        <FormControl
+          type="text"
+          name="subject"
+          defaultValue={ msg && msg.to }
+        />
+      </FormGroup>
+      <FormGroup>
         <ControlLabel>Body</ControlLabel>
         <FormControl
           componentClass="textarea"
