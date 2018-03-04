@@ -14,3 +14,6 @@ import '../../api/country/methods';
 
 import '../../api/mesagge/server/publications';
 import '../../api/mesagge/methods';
+
+import '../../api/feedbacks/server/publications';
+import '../../api/feedbacks/methods';

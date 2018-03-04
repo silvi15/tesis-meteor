@@ -16,7 +16,7 @@ const AppNavigation = ({ authenticated }) => (
   <Navbar>
     <Navbar.Header>
       <Navbar.Brand>
-        <Link to="/">App</Link>
+        <Link to="/">UP!Work</Link>
       </Navbar.Brand>
       <Navbar.Toggle />
     </Navbar.Header>
