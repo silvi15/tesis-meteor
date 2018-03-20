@@ -5,7 +5,7 @@ import { Roles } from 'meteor/alanning:roles';
 import { Row, Col, Button } from 'react-bootstrap';
 import MenuProject from '../../components/MenuProject';
 import UserProjectsFinished from '../../containers/project/UserProjectsFinished';
-
+//import UserName from '../../containers/user/UserName';
 export default class ProjectsFinished extends React.Component{
     constructor(props){
     super(props);
@@ -16,6 +16,8 @@ export default class ProjectsFinished extends React.Component{
 render(){
     const showWorker = Roles.userIsInRole(Meteor.userId(),['worker']);
     const showEnterprise = Roles.userIsInRole(Meteor.userId(),['enterprise']);
+    const {user} = this.state;
+    const userId = user._id;
     /* las variables que no muestre las tengo q aclarar aca, para que no explote*/
     return (
         <div className="container">

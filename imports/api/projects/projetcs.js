@@ -60,8 +60,20 @@ Projects.schema = new SimpleSchema({
         type: Date,
         label: 'datefinish',
     },
-    notifications: {
-        type: [Object],
+    "notifications.$.userPostulate":{
+        type: String,
+    },
+    "notifications.$.userOwner":{
+        type: String,
+    },
+    "notifications.$.date":{
+        type: Date,
+    },
+    "notifications.$.proyectId":{
+        type: String,
+    },
+    "notifications.$.stateNot":{
+        type: String,
     },
 });
 Projects.attachSchema(Projects.schema);

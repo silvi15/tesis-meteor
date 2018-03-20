@@ -11,45 +11,41 @@ const handleUpsert = () => {
     const confirmation = notification && notification._id ? 'Notification Updated' : 'Add Notification';
     const upsert = {
         notifications:{
-            userpostulate: notification.userpostulate,
-            userowner: notification.userowner,
-            projectid: notification.selectedProject,
-            statenot: 'new',
+            userPostulate: notification.userpostulate,
+            userOwner: notification.userowner,
+            projectId: notification.selectedProject,
+            stateNot: 'new',
             date: new Date(),
         },
     };
-    if(notification && notification._id) {
-        upsert.notifications._id = notification._id;
-    }else{
-        upsert.notifications._id= uuid.v4();
-    }
-    console.log("Upsert: ", upsert);
-    upsertNotification.call(upsert,(error, response) => {
-        if(error){
-            Bert.alert(error.message,'danger');
-        }else{
+    if (notification && notification._id) upsert._id = notification._id;
+    upsertNotification.call(upsert, (error, response) => {
+        if (error) {
+            Bert.alert(error.reason, 'danger');
+        } else {
             component.notificationEditForm.reset();
-            Bert.alert(confirmation,'success');
-            component.props.history.push(`/projects/${response.insertId || notification._id}`);
+            Bert.alert(confirmation, 'success');
+            component.props.history.push('/proyects');
         }
     });
 };
+
 const validate = () => {
     $(component.notificationEditForm).validate({
         rules: {
-            userowner: {
+            userOwner: {
                 required: true,
             },
-            userpostulate: {
+            userPostulate: {
                 required: true,
             },
-            projectid: {
+            projectId: {
                 required: true,
             },
             date: {
                 required: true,
             },
-            statenot:{
+            stateNot:{
                 required: true,
             },
         },

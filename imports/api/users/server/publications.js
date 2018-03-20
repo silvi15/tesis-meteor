@@ -13,7 +13,7 @@ Meteor.publish('users.listByCorp', () => {
   }
 });
 
-Meteor.publish('user.view', _id => {
-  check(_id, String)
-  return Meteor.users.find({ _id })
-})
+Meteor.publish('user.view', (_id) => {
+  check(_id, String);
+  return Meteor.users.find(_id);
+});
