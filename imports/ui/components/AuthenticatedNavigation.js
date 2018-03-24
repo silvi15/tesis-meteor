@@ -15,7 +15,7 @@ const AuthenticatedNavigation = () => (
   <div className="container">
     <Nav>
       <li>
-        <NavLink to="/documents"></NavLink> 
+        <NavLink to="/projects"></NavLink> 
       </li>
     </Nav>
     <Nav pullRight>

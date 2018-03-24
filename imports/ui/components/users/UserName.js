@@ -1,7 +1,8 @@
 import React from 'react'
 
-const UserName = ({name, last}) => {
+const UserName = ({doc}) => {
+    console.log('asdasdasdsad', doc);
     return (
-        <p>{name}, {last}</p>
+        <p>{doc}</p>
     )
 } 

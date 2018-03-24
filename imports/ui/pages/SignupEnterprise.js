@@ -24,7 +24,7 @@ export default class SignupEnterprise extends React.Component {
       <div className="Signup">
         <Row>
           <Col xs={ 12 } sm={ 6 } md={ 4 }>
-            <h4 className="text-center"> Sign Up - <label> Enterprise </label> </h4>
+            <h4 className="text-center"> Sign Up - <label> Employer </label> </h4>
             <form
               ref={ form => (this.signupFormEnterprise = form) }
               onSubmit={ this.handleSubmit }
