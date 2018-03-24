@@ -7,10 +7,13 @@ export const upsertFeedback = new ValidatedMethod({
   name: 'feedbacks.upsert',
   validate: new SimpleSchema({
     _id: { type: String, optional: true },
-    userworker: { type: String, optional: true },
-    userbusines: {type: String, optional: true},
-    skills:{ type: [String], optional: true},
-    comments:{ type: String, optional: true},
+    //userworker: { type: String, optional: true },
+    //userowner: {type: String, optional: true},
+    //proyectId: { type: String, optional: true },
+    skills: { type: [String], optional: true},
+    //skillsRanking: { type: [String], optional: true},
+    comments: { type: String, optional: true},
+    date: { type: Date}
   }).validator(),
   run(doc) {
     return Feedbacks.upsert({ _id: doc._id }, { $set: doc });

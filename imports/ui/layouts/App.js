@@ -17,6 +17,12 @@ import NewDocument from '../pages/document/NewDocument';
 import EditDocument from '../containers/document/EditDocument';
 import ViewDocument from '../containers/document/ViewDocument';
 
+/*FeedBacks */
+import FeedBacks from '../pages/feedBack/FeedBacks';
+import NewFeedBack from '../pages/feedBack/NewFeedBack';
+import EditFeedBack from '../containers/feedBack/EditFeedBack';
+import ViewFeedBack from '../containers/feedBack/ViewFeedBack';
+
 /*Mesagge */
 import Mesagges from '../pages/mesagge/Mesagges';
 import NewMesagge from '../pages/mesagge/NewMesagge';
@@ -34,14 +40,17 @@ import Professions from '../pages/profession/Professions';
 import NewProfession from '../pages/profession/NewProfession';
 import EditProfession from '../containers/profession/EditProfession';
 import ViewProfession from '../containers/profession/ViewProfession';
+
 /*home */
 import Home from '../pages/home/Home';
 import ProjectsWorking from '../pages/home/ProjectsWorking';
 import ProjectsFinished from '../pages/home/ProjectsFinished';
+
 /* country*/
 import Countrys from '../pages/country/Countrys';
 import NewCountry from '../pages/country/NewCountry';
 import EditCountry from '../containers/country/EditCountry';
+
 {/*import ViewCountry from '../containers/country/ViewCountry'; */}
 /* skill */
 import Skills from '../pages/skill/Skills';
@@ -79,6 +88,11 @@ const App = appProps => (
           <Authenticated exact path="/documents/new" component={ NewDocument } {...appProps} />
           <Authenticated exact path="/documents/:_id" component={ ViewDocument } {...appProps} />
           <Authenticated exact path="/documents/:_id/edit" component={ EditDocument } {...appProps} />
+
+          <Authenticated exact path="/feedbacks" component={ FeedBacks } {...appProps} />
+          <Authenticated exact path="/feedbacks/new" component={ NewFeedBack } {...appProps} />
+          <Authenticated exact path="/feedbacks/:_id" component={ ViewFeedBack } {...appProps} />
+          <Authenticated exact path="/feedbacks/:_id/edit" component={ EditFeedBack } {...appProps} />
 
           <Authenticated exact path="/mesagges" component={ Mesagges } {...appProps} />
           <Authenticated exact path="/mesagges/new" component={ NewMesagge } {...appProps} />

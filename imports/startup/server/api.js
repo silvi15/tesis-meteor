@@ -20,6 +20,10 @@ import '../../api/feedbacks/methods';
 
 import '../../api/users/server/publications';
 import '../../api/users/methods';
+
+import '../../api/feedbacks/server/publications';
+import '../../api/feedbacks/methods';
+
 /*
 import '../../api/notifications/server/publications';
 import '../../api/notifications/methods';

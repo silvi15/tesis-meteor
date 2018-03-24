@@ -18,17 +18,26 @@ Feedbacks.allow({
   });
   // creacion del schema
   Feedbacks.schema = new SimpleSchema({
+    /*
     userworker: {
       type: String,
     },
-    userbusines: {
+    userowner: {
       type: String,
     },
-    skills:{
+    projectId :{
+      type: String,
+    },
+    */
+    skills: {
       type: [String],
+      optional: true
     },
     comments:{
         type: String,
+    },
+    date: {
+      type: Date,
     },
   });
   Feedbacks.attachSchema(Feedbacks.schema);

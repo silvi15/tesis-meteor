@@ -1,5 +1,5 @@
 import { Bert } from 'meteor/themeteorchef:bert';
-import { upsertSubdependencie } from '../../api/subdependencies/methods';
+import { upsertFeedback } from '../../api/feedbacks/methods';
 import '../validation.js';
 
 let component;
@@ -9,10 +9,13 @@ const handleUpsert = () => {
     console.log("props ", component.props)
     const confirmation = doc && doc._id ? 'Datos actualizados correctamente' : 'Datos guardados con éxito';
     const upsert = {
-        userworker: doc.userworker.trim(),
-        userbusines: doc.userbusines.trim(),
-        skills: doc.skills.trim(),
-        comments: doc.comments.trim(),
+        //userworker: userworker.trim(),
+        //userowner: userbusines.trim(),
+        //proyectId: proyectId.trim(),
+        skills: component.state.selectedSkill,
+       // "skillsRanking": doc.skillsRanking.trim(),
+        comments: document.querySelector('[name="comments"]').value.trim(),
+        date: new Date(),
     };
 
     if (doc && doc._id) upsert._id = doc._id;
@@ -35,17 +38,13 @@ const validate = () => {
             comments: {
                 required: true,
             },
-            skills: {
-                required: true,
-            },
+            
         },
         messages: {
             commenst: {
                 required: 'Ingrese algun comentario',
             },
-            skills: {
-                required: 'Es necesario dar una puntuación',
-            },
+            
         },
         submitHandler() { handleUpsert(); },
     });
