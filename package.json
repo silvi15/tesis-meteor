@@ -71,7 +71,7 @@
     "jquery": "^2.2.4",
     "jquery-validation": "^1.15.1",
     "lodash": "^4.17.4",
-    "meteor-node-stubs": "^0.3.2",
+    "meteor-node-stubs": "^0.3.3",
     "normalize-css": "^2.3.1",
     "react": "^15.6.2",
     "react-addons-pure-render-mixin": "^15.3.2",
@@ -81,6 +81,7 @@
     "react-router-bootstrap": "^0.23.1",
     "react-router-dom": "^4.2.2",
     "react-search-input": "^0.11.3",
+    "react-stars": "^2.2.5",
     "uuid": "^3.1.0"
   }
 }

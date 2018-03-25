@@ -35,7 +35,7 @@ export default class ProfessionsList extends Component{
                         type="text"
                         ref="profession"
                         name="profession"
-                        placeholder="please put proffesion"
+                        placeholder="please put profession"
                         onChange={this.searchHandler}
                         value = {term}
                     />

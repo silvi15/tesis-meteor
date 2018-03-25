@@ -29,9 +29,13 @@ Feedbacks.allow({
       type: String,
     },
     */
-    skills: {
+    skillsName : {
       type: [String],
       optional: true
+    },
+    skillsStar:{
+      type: [String],
+      optional: true,
     },
     comments:{
         type: String,

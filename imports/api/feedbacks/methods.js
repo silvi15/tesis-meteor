@@ -10,12 +10,13 @@ export const upsertFeedback = new ValidatedMethod({
     //userworker: { type: String, optional: true },
     //userowner: {type: String, optional: true},
     //proyectId: { type: String, optional: true },
-    skills: { type: [String], optional: true},
-    //skillsRanking: { type: [String], optional: true},
+    skillsName: { type: [String] },
+    skillsStar: { type: [String] },
     comments: { type: String, optional: true},
     date: { type: Date}
   }).validator(),
   run(doc) {
+    console.log('doc', doc);
     return Feedbacks.upsert({ _id: doc._id }, { $set: doc });
   },
 });
