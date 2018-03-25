@@ -61,7 +61,7 @@ export default class ProjectsList extends Component {
                                 </ul>
                             </div>
                         </div>
-                    )).reverse()}
+                    ))}
                 </div>
             </form>);
     }

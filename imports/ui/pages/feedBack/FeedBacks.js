@@ -8,11 +8,13 @@ const FeedBacks = ({ history }) => (
     <Row>
       <Col xs={ 12 }>
         <div className="page-header clearfix">
-         <div className="container"> <h2 className="pull-left">FeedBacks</h2> </div>
+         <div className="container"> <h2 className="pull-left">¡Thanks for helping build the profile of the users !</h2> </div>
+          {/*
           <Link to="/feedbacks/new">
             <Button className="btn btn-primary">
             New Feedback!</Button>
           </Link>
+          */}
         </div>
         <FeedBacksList history={history} />
       </Col>

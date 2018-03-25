@@ -76,31 +76,50 @@ export default class Profile extends React.Component {
                     {skills.map((name, index) => {
                         return (<Button key={index} type="button" className="btn btn-primary">
                             {name}
-                            <p><span className="glyphicon glyphicon-star-empty"></span>
+                            <p>
+                            <span className="glyphicon glyphicon-star-empty"></span>
+                            <span className="glyphicon glyphicon-star-empty"></span>
+                            <span className="glyphicon glyphicon-star-empty"></span>
+                            <span className="glyphicon glyphicon-star-empty"></span>
+                            <span className="glyphicon glyphicon-star-empty"></span>
                             </p>
                         </Button>
                         )
                     })}
 
                 </div>
-
+                {showWorkers && 
                 <div className="comments">
-                    <h4>Comments</h4>
-                    
+                    <h4>Comments</h4> 
                     <img src="/img/avatar.png" className="img-circle" alt="Cinque Terre" width="30" height="30" />
                     <div className="or">
                         <div className="bla">
                             <div className="bky">
-                                <small className="zc asz">12 min</small>
-                                <h6>Martin</h6>
+                                <h6>ctomba@gmail.com</h6>
                             </div>
                             <p>
-                            You are an excelent employer! see you in the next project
+                            Fue fantastico trabajar contigo! muchas gracias, la interfaz quedo tal como lo imaginaba
                                         </p>
                         </div> 
-                    </div>
-                    
+                    </div>    
                 </div>
+                || <div></div> }
+                {showEnterprise && 
+                <div className="comments">
+                    <h4>Comments</h4> 
+                    <img src="/img/avatar.png" className="img-circle" alt="Cinque Terre" width="30" height="30" />
+                    <div className="or">
+                        <div className="bla">
+                            <div className="bky">
+                                <h6>silvi.troncoso@gmail.com</h6>
+                            </div>
+                            <p>
+                                Excelente forma de trabajar! 
+                            </p>
+                        </div> 
+                    </div>    
+                </div>
+                || <div></div> }
             </div>
         );
     }

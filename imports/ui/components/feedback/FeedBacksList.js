@@ -13,8 +13,7 @@ const FeedBacksList = ({ history, feedbacks }) => (
         { comments }  
       </ListGroupItem>
     ))}
-  </ListGroup> :
-  <Alert bsStyle="warning">No feedbacks yet.</Alert>
+  </ListGroup> :  <div></div>
 );
 
 FeedBacksList.propTypes = {
