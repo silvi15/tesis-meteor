@@ -18,62 +18,52 @@ Projects.deny({
 Projects.schema = new SimpleSchema({
     name: {
         type: String,
-        label: 'The Title of Project'
+        optional: true
     },
     desc: {
         type: String,
-        label: 'Description of project',
+        optional: true
     },
     days:{
         type: String,
-        label: 'Quantity of days',
-    },
-    money: {
-        type: String,
-        label: 'Price of project',
-    },
-    skills:{
-        type: [String],
-        label: 'skills',
+        optional: true
     },
     createdAt: {
         type: Date,
-        label: 'createdAt',
-        },
-    userowner: {
-        type: String,
-        label: 'userowner',
-    },
-    state: {
-        type: String,
-        label: 'state',
-    },
-    userworker: {
-        type: String,
-        label: 'userworker',
+        optional: true
     },
     dateStart: {
         type: Date,
-        label: 'dateStart',
+        optional: true
     },
     dateFinish: {
         type: Date,
-        label: 'datefinish',
+        optional: true
     },
-    "notifications.$.userPostulate":{
+    money: {
         type: String,
+        optional: true
     },
-    "notifications.$.userOwner":{
+    userowner: {
         type: String,
+        optional: true
     },
-    "notifications.$.date":{
-        type: Date,
-    },
-    "notifications.$.proyectId":{
+    state: {
         type: String,
+        optional: true
     },
-    "notifications.$.stateNot":{
+    skills:{
+        type: [String],
+        optional: true
+    },
+    stateNot: {
         type: String,
+        optional: true,
     },
+    userworker: {
+        type: String,
+        optional: true
+    },
+    
 });
 Projects.attachSchema(Projects.schema);

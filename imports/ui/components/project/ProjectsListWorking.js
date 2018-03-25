@@ -1,4 +1,5 @@
 import React, {PropTypes, Component} from 'react';
+import { Meteor } from 'meteor/meteor';
 import { ListGroup, ListGroupItem, Alert, Button, Form, Nav } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import notificationEditor from '../../../modules/project/notification-editor';
@@ -16,28 +17,11 @@ export default class ProjectsListWorking extends Component{
             }
         }
     }
-    componentDidMount(){
-        notificationEditor({ component: this });
-    }
-    handleSubmit(event) {
-        event.preventDefault();
-    }
-    selectedProject(idproject, userpostulate, userowner){
-        this.setState({
-            notification: { 
-                selectedProject: idproject,
-                userpostulate: userpostulate._id,
-                userowner: userowner,
-            }
-        });
-    }
+   
     render(){
         const { user } = this.state;
         const { projects } = this.state;
         return(   
-            <form ref={form => this.notificationEditForm = form }
-                  onSubmit={ this.handleSubmit }
-            >
             <div className="ProjectsList">
             {projects.map(({_id, name, desc, userowner, state, dateStart, dateFinish }) => (
                 <div key={ _id } >
@@ -51,18 +35,16 @@ export default class ProjectsListWorking extends Component{
                 <h5><div className="time"><p><span className="fa fa-calendar" aria-hidden="true"> </span> Finish: 01/03/2018 </p></div></h5>
                 <h5><div className="state"><p><span className="fa fa-spinner" aria-hidden="true"> </span> {state} </p></div></h5>
                 <span className="fa fa-spinner" aria-hidden="true"> </span>
-                <i><Button className="finish" 
-                           aria-hidden="true"
-                           type="submit"
-                           onClick={()=>{this.selectedProject(_id,user,userowner)}}>  
-                    { projects && projects._id ? 'Save Changes' : 'Finish' }
-                    <span className="fa fa-check" aria-hidden="true"> </span>
-                </Button></i>
+                <i>
+                <NavLink to="/feedbacks/new" className="btn btn-success" >
+                            Finish
+                        </NavLink>
+                </i>
                 </ul>
                 </div>
                 </div> 
             )).reverse()}
             </div>
-       </form>);
+       );
     }
 } 

@@ -15,14 +15,15 @@ export const upsertProject = new ValidatedMethod({
     createdAt: { type: Date },
     userowner: { type: String },
     state: { type: String, optional: true },
-    userworker: { type: String, optional: true },
-    dateStart: { type: Date, optional: true },
-    dateFinish: { type: Date, optional: true },
+    //userworker: { type: String, optional: true },
+    //dateStart: { type: Date, optional: true },
+    //dateFinish: { type: Date, optional: true },
   }).validator(),
   run(document) {
     return Projects.upsert({ _id: document._id }, { $set: document });
   },
 });
+
 export const removeProject = new ValidatedMethod({
   name: 'projects.remove',
   validate: new SimpleSchema({
@@ -32,32 +33,25 @@ export const removeProject = new ValidatedMethod({
     Projects.remove(_id);
   },
 });
-export const removeNotification = new ValidatedMethod({
-  name: 'notifications.remove',
-  validate: new SimpleSchema({
-    _id: { type: String },
-  }).validator(),
-  run({ _id }) {
-    Projects.remove(_id);
-  },
-});
+
 rateLimit({
   methods: [
     upsertProject,
     removeProject,
-    removeNotification,
   ],
   limit: 5,
   timeRange: 1000,
 });
+
 Meteor.methods({
-  upsertNotification: (proyectId, userOwner, userPostulate, stateNot, date) => {
+  upsertProject: (proyectId, userowner, userworker, stateNot, dateStart) => {
     check(proyectId, String);
-    check(userOwner, String);
-    check(userPostulate, String);
+    check(userowner, String);
+    check(userworker, String);
     check(stateNot, String);
-    check(date, String)
-    Projects.update({ _id: proyectId }, { $push: { notifications: { userOwner: userOwner, userPostulate: userPostulate, stateNot: stateNot, date: date } } }, (error, data) => {
+    check(dateStart, String);
+    check(dateFinish, String);
+    Projects.update({ _id: proyectId }, { $push: { notifications: { userowner: userowner, userworker: userworker, stateNot: stateNot, dateStart: dateStart, dateFinish: dateFinish } } }, (error, data) => {
       console.log('error', error);
       console.log('data', data);
     });

@@ -52,8 +52,13 @@ import NewCountry from '../pages/country/NewCountry';
 import EditCountry from '../containers/country/EditCountry';
 
 {/*import ViewCountry from '../containers/country/ViewCountry'; */}
+
 /* skill */
+
 import Skills from '../pages/skill/Skills';
+import NewSkill from '../pages/skill/NewSkill';
+import EditSkill from '../containers/skill/EditSkill';
+import ViewSkill from '../containers/skill/ViewSkill';
 
 //Login
 import Login from '../pages/Login';
@@ -88,6 +93,7 @@ const App = appProps => (
           <Authenticated exact path="/documents/new" component={ NewDocument } {...appProps} />
           <Authenticated exact path="/documents/:_id" component={ ViewDocument } {...appProps} />
           <Authenticated exact path="/documents/:_id/edit" component={ EditDocument } {...appProps} />
+          
 
           <Authenticated exact path="/feedbacks" component={ FeedBacks } {...appProps} />
           <Authenticated exact path="/feedbacks/new" component={ NewFeedBack } {...appProps} />
@@ -110,10 +116,10 @@ const App = appProps => (
           <Authenticated exact path="/countrys/:_id/edit" component={ EditCountry } {...appProps} />
 
           <Authenticated exact path="/skills" component={Skills} {...appProps} />
-{/*          <Authenticated exact path="/skills/new" component={NewSkill} {...appProps} />
+          <Authenticated exact path="/skills/new" component={NewSkill} {...appProps} />
           <Authenticated exact path="/skills/:_id" component={ViewSkill} {...appProps} />
           <Authenticated exact path="/skills/:_id/edit" component={EditSkill} {...appProps} />
-*/}          
+          
           <Authenticated exact path="/home" component = { Home } {...appProps} />
           <Authenticated exact path="/projectsworking" component = { ProjectsWorking } {...appProps} />
           <Authenticated exact path="/projectsfinished" component = { ProjectsFinished } {...appProps} />

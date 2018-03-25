@@ -11,7 +11,7 @@ const FeedBacks = ({ history }) => (
          <div className="container"> <h2 className="pull-left">FeedBacks</h2> </div>
           <Link to="/feedbacks/new">
             <Button className="btn btn-primary">
-            New Feedback</Button>
+            New Feedback!</Button>
           </Link>
         </div>
         <FeedBacksList history={history} />

@@ -10,7 +10,7 @@ export default class SkillEditor extends React.Component {
   }
 
   render() {
-    const { skl } = this.props;
+    const { doc } = this.props;
     return (<form
       ref={ form => (this.skillEditorForm = form) }
       onSubmit={ event => event.preventDefault() }
@@ -20,17 +20,17 @@ export default class SkillEditor extends React.Component {
         <FormControl
           type="text"
           name="name"
-          defaultValue={ skl && skl.name }
+          defaultValue={ doc && doc.name }
           placeholder="Please add new skill"
         />
       </FormGroup>
       <Button type="submit" bsStyle="success">
-        { skl && skl._id ? 'Save Changes' : 'Add Skill' }
+        { doc && doc._id ? 'Save Changes' : 'Add Skill' }
       </Button>
     </form>);
   }
 }
 
 SkillEditor.propTypes = {
-  skl: PropTypes.object,
+  doc: PropTypes.object,
 };

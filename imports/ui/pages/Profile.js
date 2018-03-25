@@ -76,7 +76,8 @@ export default class Profile extends React.Component {
                     {skills.map((name, index) => {
                         return (<Button key={index} type="button" className="btn btn-primary">
                             {name}
-                            <p><span className="glyphicon glyphicon-star-empty"></span></p>
+                            <p><span className="glyphicon glyphicon-star-empty"></span>
+                            </p>
                         </Button>
                         )
                     })}

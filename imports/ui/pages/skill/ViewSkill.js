@@ -19,28 +19,28 @@ const handleRemove = (history, _id) => {
       });
     }
 };
-const ViewSkill = ({skl,history}) => {
-    return skl ? ( 
+const ViewSkill = ({doc,history}) => {
+    return doc ? ( 
     <div className="ViewSkill">
         <div className="page-header clearfix">
-        <h4 className="pull-left">{skl && skl.name }</h4>
+        <h4 className="pull-left">{doc && doc.name }</h4>
             <ButtonToolbar className="pull-right">
             <ButtonGroup bsSize="small">
                 <Button 
-                onClick={() => handleEdit(history, skl._id)}
+                onClick={() => handleEdit(history, doc._id)}
                 >Edit</Button>
                 <Button 
-                onClick={() => handleEdit(history, skl._id)}
+                onClick={() => handleEdit(history, doc._id)}
                 >Delete</Button>
             </ButtonGroup>
             </ButtonToolbar>
         </div>
-        { skl && skl.name }
+        { doc && doc.name }
     </div>
     ) : <NotFound />;
 };
 ViewSkill.propTypes = {
-    skl: PropTypes.object,
+    doc: PropTypes.object,
     history: PropTypes.object,
 };
 export default ViewSkill;

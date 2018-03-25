@@ -18,50 +18,33 @@ Notifications.deny({
 
 Notifications.schema = new SimpleSchema({
     // fecha de creación de la notificación
-    createdAt: {
+    date: {
         type: Date
     },
     // Es el usuario que genera la notificación. Puede ser user_Id o "system"
-    userOwner: {
-        type: String
-    },
-    // inactive-user, normal-notification, corporation-request
-    type: {
-        type: String
+    userowner: {
+        type: String,
+        optional: true,
     },
     // users Ids
-    usersDestination: {
-        type: [String]
+    userPostulate: {
+        type: String,
+        optional: true,
+    },
+    proyectId: {
+        type: String,
+        optional: true,
     },
     // new, opened, complete
     state: {
-        type: String
-    },
-    // Título y mensaje de la notificación
-    body: {
-        type: Object
-    },
-    "body.title": {
-        type: String
-    },
-    "body.message": {
-        type: String
-    },
-    "doneBy.userName": {
         type: String,
-        optional: true
-    },
-    "doneBy.userId": {
-        type: String,
-        optional:true
+        optional: true,
     },
     path: {
-        type: String
+        type: String,
+        optional: true,
     },
-    blank: {
-        type: Boolean,
-        optional: true
-    }
+
 })
 
 Notifications.attachSchema(Notifications.schema);

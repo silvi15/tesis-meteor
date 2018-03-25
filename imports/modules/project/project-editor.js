@@ -15,9 +15,9 @@ const handleUpsert = () => {
         userowner: component.state.user,
         createdAt: component.state.createdAt,
         state: 'waiting',
-        userworker: 'anyones',
-        dateStart: new Date(),
-        dateFinish: new Date(),            
+        //userworker: 'anyones',
+        //dateStart: new Date(),
+        //dateFinish: new Date(),            
     };
     
     //if(pro && pro.notification) upsert.notification = pro.notification;
@@ -50,9 +50,6 @@ const validate = () => {
                 required: true,
             },
             money:{
-                required: true,
-            },
-            user:{
                 required: true,
             },
         },

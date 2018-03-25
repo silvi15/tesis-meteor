@@ -1,31 +1,33 @@
-import React, { Component,PropTypes } from 'react';
-import { Button, Alert } from 'react-bootstrap'; 
+import React, { PropTypes } from 'react';
+import { ListGroup, ListGroupItem, Alert, Button } from 'react-bootstrap';
+import ReactStars from 'react-stars'
 
-export default class SkillsList extends Component{
-    constructor(props){
-    super(props); 
-    console.log('hola desde skills list');
-    }
-    render(){
-        let { selectSkill, skills } = this.props;
-      {/*  let {skills} = this.props.onSendProf; */} 
-             return (
-                skills.length > 0 ? 
-                <div>
-                    {skills.map(({_id, name}) => (
-                        <Button key={_id}
-                                style={{margin: "5px"}}
-                                name={skills}
-                                ref={skills}
-                                onClick={() => {selectSkill(name);}}
-                        >
-                                { name }
-                        </Button>
-                    ))}
-                </div>
-                :
-            <Alert bsStyle="warning">No Skills yet.</Alert>
-        )
-    }
+const handleNav = (history, _id) => {
+  history.push(`/skills/${_id}`);
+};
+const ratingChanged = (newRating) => {
+  console.log(newRating)
 }
-{/* className={"btn " + (selectedButton ? 'btn-success' : 'btn-info')}  */}
+
+const SkillsList = ({ history, doc }) => (
+  doc.length > 0 ? <ListGroup className="SkillsList">
+    {doc.map(({ _id, name }) => (
+      <Button key={_id} onClick={() => handleNav(history, _id)}>
+        {name}
+        <ReactStars
+          onChange={ratingChanged}
+          count={5}
+          size={24}
+          color2={'#ffd700'} />
+      </Button>
+    ))}
+  </ListGroup> :
+    <Alert bsStyle="warning">No Skill yet.</Alert>
+);
+
+SkillsList.propTypes = {
+  history: PropTypes.object,
+  doc: PropTypes.array,
+};
+
+export default SkillsList;

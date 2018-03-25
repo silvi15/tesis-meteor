@@ -5,6 +5,7 @@ import '../../api/projects/methods.js';
 import '../../api/projects/server/publications';
 
 import '../../api/skills/server/publications';
+import '../../api/skills/methods'
 
 import '../../api/professions/server/publications';
 import '../../api/professions/methods';
@@ -24,7 +25,6 @@ import '../../api/users/methods';
 import '../../api/feedbacks/server/publications';
 import '../../api/feedbacks/methods';
 
-/*
+
 import '../../api/notifications/server/publications';
 import '../../api/notifications/methods';
-*/

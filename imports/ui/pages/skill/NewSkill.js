@@ -1,4 +1,4 @@
-import React, {PropType} from 'react';
+import React, {PropTypes} from 'react';
 import SkillEditor from '../../components/skill/SkillEditor';
 
 const NewSkill = ({ history }) => (
@@ -7,7 +7,7 @@ const NewSkill = ({ history }) => (
         <SkillEditor history={history} />
     </div>
 );
-NewSkill.propType = {
-    history: PropType.object,
+NewSkill.propTypes = {
+    history: PropTypes.object,
 };
 export default NewSkill;

@@ -3,6 +3,10 @@ import { FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
 import feedbackEditor from '../../../modules/feedback/feedback-editor';
 import ProfessionsList from '../../containers/profession/ProfessionsList';
 import SkillsListStar from '../../containers/profession/ViewProfStar';
+import ReactStars from 'react-stars'
+
+import SkillsList from '../../containers/skill/SkillsList';
+
 
 const skills = [];
 const stars = [];
@@ -75,7 +79,7 @@ export default class FeedBackEditor extends React.Component {
                     placeholder="Please put your experince..."
                 />
             </FormGroup>
-            
+            {/*
             <FormGroup>
                 <ControlLabel>
                     <i><span className="fa fa-briefcase" aria-hidden="true"></span> </i>
@@ -87,6 +91,8 @@ export default class FeedBackEditor extends React.Component {
                     selectedProf={this.state.selectedProf}
                     ratingChanged={this.ratingChanged.bind(this)} />}
             </FormGroup>
+            */}
+            <SkillsList />
             
             <Button type="submit" bsStyle="success">
                 {doc && doc._id ? 'Save Changes' : 'Add calification!'}

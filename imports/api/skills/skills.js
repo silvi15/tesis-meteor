@@ -19,9 +19,6 @@ Skills.deny({
 Skills.schema = new SimpleSchema({
     name: {
         type: String,
-        label: 'Name of Skills',
     },
 });
-//db.skills.insert({ name: "React"});
-//update and insert are only from the server
 Skills.attachSchema(Skills.schema);

@@ -5,12 +5,13 @@ import EditSkill from '../../pages/skill/EditSkill';
 import Loading from '../../components/Loading.js';
 
 const composer = ({ match }, onData) => {
-    const skillId = match.params._id;
-    const subcription = Meteor.subscribe('skills.view', skillId);
-    
-    if(subcription.ready()){
-        const skl = Skills.findOne(skillId);
-        onData(null, { doc });
-    }
+  const documentId = match.params._id;
+  const user = Meteor.user();
+  const subscription = Meteor.subscribe('skill.view', documentId);
+  if (subscription.ready()) {
+    const doc = Skills.findOne(documentId);
+    onData(null, { doc, user });
+  }
 };
-export default composeWithTracker(composer,Loading)(EditSkill); 
+
+export default composeWithTracker(composer, Loading)(EditSkill);
